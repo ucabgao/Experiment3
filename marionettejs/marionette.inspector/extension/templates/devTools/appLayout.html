@@ -1,0 +1,80 @@
+
+<div class="app-layout-body">
+
+<nav class="app-header navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo.svg"></img>
+    </a>
+  </div>
+
+  <ul class="nav navbar-nav">
+    <li data-tool="back" class="glyphicon glyphicon-chevron-left back-forward">
+      <a href="#"></a>
+    </li>
+
+    <li data-tool="forward" class="glyphicon glyphicon-chevron-right back-forward">
+      <a href="#"></a>
+    </li>
+
+    <li class="mag">
+      <button
+          data-action="search"
+          class="node-search-status-bar-item status-bar-item"
+          title="Select an element in the page to inspect it.">
+          <div class="glyph"></div>
+          <div class="glyph shadow"></div>
+      </button>
+    </li>
+
+    <li data-tool="ui" data-route="ui" class="{{#active_tool.is_ui}}active{{/active_tool.is_ui}}">
+      <a href="#">UI</a>
+    </li>
+    <li data-tool="data" data-route="data" class="{{#active_tool.is_data}}active{{/active_tool.is_data}}">
+      <a href="#">Data</a>
+    </li>
+    <li data-tool="radio" data-route="radio" class="{{#active_tool.is_radio}}active{{/active_tool.is_radio}}">
+      <a href="#">Radio</a>
+    </li>
+    <li data-tool="activity" data-route="activity" class="{{#active_tool.is_activity}}active{{/active_tool.is_activity}}">
+      <a href="#">Activity</a>
+    </li>
+  </ul>
+
+</nav>
+
+{{^isAgentActive}}
+  <div data-region="tool" class="app-tool-region">
+    <div style="margin-top:20px;">
+      {{#isWaiting}}
+        <h3>Loading...</h3>
+      {{/isWaiting}}
+      {{^hasStarted}}{{^isWaiting}}
+        <button style="margin:0 auto; display: block;" data-action="start" type="button" class="btn btn-primary">Start the Inspector!</button>
+      {{/isWaiting}}{{/hasStarted}}
+    </div>
+  </div>
+{{/isAgentActive}}
+{{#isAgentActive}}
+  {{#hasLoadFailed}}
+    <div data-region="tool">
+        <h3>Hey, we could not find your app!</h3>
+
+        <p>When the page loads, we look for Backbone and Marionette on the window and inside of define calls</p>
+
+        <p>If you're doing neither of those things, then you'll need to start the inspector manually at the top of the program</p>
+
+        <code>
+          window.__agent &amp;&amp; window.__agent.start(Backbone, Marionette)
+        </code>
+
+        <p>If that doesn't work, come stop by https://gitter.im/MarionetteLabs/marionette.inspector and let us know.</p>
+      </div>
+    </div>
+  {{/hasLoadFailed}}
+  {{^hasLoadFailed}}
+    <div data-region="tool"></div>
+  {{/hasLoadFailed}}
+{{/isAgentActive}}
+</div>

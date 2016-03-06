@@ -1,0 +1,7 @@
+[cache]
+type=Disk
+base=/tmp/tilecache
+
+
+[% cachelayers %]
+

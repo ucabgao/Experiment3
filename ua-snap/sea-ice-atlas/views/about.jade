@@ -1,0 +1,196 @@
+extends layout
+
+block content
+
+	.container.about
+			
+		h1 We can plan for the future by studying the past.
+		p
+			| Until now, no tool has existed that allows the simultaneous
+			| viewing of multiple sources of  historical sea
+			| ice data. This new, web based atlas is designed to let users
+			| view historical sea ice data collected between 1760 and
+			| today, and compiled for display on an interactive map of the seas
+			| surrounding northern Alaska.
+				
+		.panel.panel-primary.pull-right
+			.panel-heading
+				h4.panel-title Living with uncertainty in data
+			
+			.panel-body
+				p
+					strong Uncertainty is essential for driving science forward.
+				p
+					| The role of science is to assess evidence and show
+					| which of several possible answers has the most support.
+					| Where uncertainties remain, scientists know what to
+					| investigate next.
+				p
+					| We all make decisions in our daily lives that are based
+					| on incomplete information. It is helpful to know about
+					| uncertainties up front so that we can make informed
+					| decisions.
+		
+					img(src='img/USS_BEAR_off_Point_Barrow_22_sm.jpg')
+
+				p.caption	
+					| Navigating and collecting data in heavy ice was extremely
+					| uncertain for some mariners. 
+				
+		h2 How to use the atlas
+		p
+			| Use this atlas to learn how sea ice extent and concentration
+			| have changed, from many decades ago to the present time. The atlas
+			| is not designed for forecasting or prediction, but can provide
+			| useful historical context for future planning efforts.
+		p
+			strong If you are&nbsp;
+			| a resident of a coastal community,
+			| someone who hunts or fishes in a marine environment, a member of
+			| the shipping or oil + gas industries, in the US Coast guard, a
+			| scientist, or otherwise interested in Arctic sea ice data and
+			| climate change,&nbsp;
+			strong this atlas is for you.
+		p
+				| Key findings from&nbsp;
+				a(href='http://dev.aoos.org/wp-content/uploads/2011/11/Descoped-CMSP-Proposal-Nov-4-FINAL.pdf') a 2011 report on the need for spatial tools for Arctic Mapping and Planning 
+				| indicate that:
+		blockquote
+			p
+				| Marine resource management decisions are often made through
+				| processes that are not based explicitly on resource data &mldr;
+				| important weaknesses in current decision-making processes
+				| involve two issues that spatial tools can help address: public
+				| participation and the availability of data and information.
+			p
+				| The most pressing management decisions revolve around
+				| climate change and the associated changes in environmental
+				| conditions coupled with increasing industrial development and
+				| consequent human uses of the ocean and near shore
+				| environments.
+		h2 Data considerations
+		p
+			| These data represent &ldquo;snapshots&rdquo; in time, as well as historical
+			| trends in arctic sea ice cover and extent. They are not projections
+			| or predictions of future conditions. Things that create uncertainty
+			| in data &mdash; especially historical data &mdash; include:
+		p
+			strong Data collection challenges.&nbsp;
+			| Collecting
+			| sea ice data is difficult; traveling through or near sea ice can be
+			| perilous or impossible for most vessels, and was especially
+			| dangerous for historic arctic voyagers. Another hazard is the
+			| weather, which is typically capricious and can be severe for
+			| observers aboard planes or ships. Historical data collection
+			| methods and interpretations of ice concentration often differed
+			| from modern protocols, and observers over time have used different
+			| types of sensors &lpar;e.g., human observation, radar, satellites&rpar; and
+			| instrument calibrations.&nbsp;
+			strong
+				| All of these add up to inconsistencies in the data.
+		p
+			strong Data compilation choices.&nbsp;
+			| Compiling data
+			| always involves a series of choices. Experts do their best to
+			| answer questions such as: Which hard copy maps to digitize? How do
+			| we interpret this handwriting? How do we fill gaps in the data
+			| record? Which time scale is best to use?&nbsp;
+			strong
+				| These choices lead to uncertainty.
+		h3 Sources of sea ice data used in this Atlas
+		script(src='https://www.google.com/jsapi?autoload={"modules":[{"name":"visualization",%20"version":"1","packages":["timeline"]}]}', type='text/javascript')
+		script(type='text/javascript').
+			google.setOnLoadCallback(drawChart);
+			function drawChart() {
+			var container = document.getElementById('datasources');
+			var chart = new google.visualization.Timeline(container);
+			var dataTable = new google.visualization.DataTable();
+			dataTable.addColumn({ type: 'string', id: 'Term' });
+			dataTable.addColumn({ type: 'string', id: 'Name' });
+			dataTable.addColumn({ type: 'date', id: 'Start' });
+			dataTable.addColumn({ type: 'date', id: 'End' });
+			dataTable.addRows([
+			[ 'ACSYS', 'Arctic Climate System Study', new Date(1760, 1, 0), new Date(2003, 12, 0) ],
+			[ 'Hill', 'Brian Hill Collection',new Date(1870, 1, 0),new Date(1963, 12, 0) ],
+			[ 'Kelly', 'Kelly Ice Extent Grids',new Date(1901, 1, 0),new Date(1956, 12, 0) ],
+			[ 'AARI', 'Arctic and Antarctic Research Institute',new Date(1933, 1, 0),new Date(2004, 12, 0) ],
+			[ 'Dehn', 'NSIDC Bill Dehn Data Collection',new Date(1953, 1, 0),new Date(1986, 12, 0) ],
+			[ 'Walsh/Johnson', 'Walsh and Johnson/Navy-NOAA Joint Ice Center',new Date(1953, 1, 0),new Date(1977, 12, 0) ],
+			[ 'NAVOCEANO', 'Naval Oceanographic Office',new Date(1953, 1, 0),new Date(1971, 12, 0) ],
+			[ 'JMA', 'Japan Meteorological Agency',new Date(1970, 1, 0),new Date(2007, 12, 0) ],
+			[ 'JIC', 'Navy-NOAA Joint Ice Center Climatology',new Date(1972, 1, 0),new Date(1994, 12, 0) ],
+			[ 'NSIDC', 'NSIDC Nimbus-7 SMMR Arctic Sea Ice Concentrations',new Date(1978, 1, 0),new Date(2013, 12, 0) ]]);
+
+			var options = {
+			timeline: { showRowLabels: true, singleColor: '#7ECEFD',
+			rowLabelStyle: {fontName: 'Open Sans', fontSize: 13, color: '#3E454C' },
+				barLabelStyle: { fontName: 'Open Sans', fontSize: 11 } }
+			};
+
+			chart.draw(dataTable, options);
+			}
+		#datasources(style='width: 100%; height: 450px;')
+
+		h4 Data source descriptions
+		p
+			a(href='http://nsidc.org/data/docs/noaa/g02176_aari_charts/') Arctic Climate System Study (ACSYS)&nbsp;&nbsp;
+			| An activity of the&nbsp;
+			a(href='http://www.wcrp-climate.org/') World Climate Research Program.&nbsp;
+			| Includes digitized ice edge positions for the north Atlantic. ACSYS Ice edge information is irregular 
+			| in time and space, and is most frequent in the 20th century. When available, ice edge data are provided monthly.
+		p
+			a(href='http://www.icedata.ca/') Brian Hill Collection&nbsp;&nbsp;
+			| Includes ice edge coordinates and accompanying maps of ice edge around Newfoundland, Grand Banks, and the 
+			| Gulf of St. Lawrence, Canada. Information is monthly for winter months of most years.
+		p
+			a(href='http://nsidc.org/pubs/documents/gd/GD-5_web.pdf') Kelly Ice Extent Grids&nbsp;&nbsp;
+			| Digitized ice edge information from monthly maps of Danish Meteorological Institute; summer only (May-Sept).
+			em&nbsp;
+				| Citation: Kelly PM 1979. An arctic sea ice data set, 1901–1956. Glaciological Data, Report GD-5: 
+				| Workshop on Snow Cover and Sea Ice Data. World Data Center-A for Glaciology [Snow and Ice], 101-106.
+		p
+			a(href='http://nsidc.org/data/docs/noaa/g02176_aari_charts/') Arctic and Antarctic Research Institute (AARI)&nbsp;&nbsp;
+			| Located in St. Petersburg, Russia, AARI produces sea ice charts for safety of navigation in the Eurasian Arctic 
+			| and other operational and scientific purposes. Chart coverage focuses on the Northern Sea Route, although later 
+			| charts extend into the central Arctic. Charts contain several categories of ice concentration.
+			p
+			a(href='http://nsidc.org/data/g01111.html') NSIDC Bill Dehn Data Collection&nbsp;&nbsp;
+			| Scanned versions of almost 7,000 ice charts donated to the
+			a(href='http://nsidc.org/') &nbsp;National Snow and Ice Data Center&nbsp;
+			| (NSIDC) by the estate of Bill Dehn are available through a searchable interface. A subset of the charts 
+			| have been digitized by the
+			a(href='http://accap.uaf.edu/') &nbsp;Alaska Center for Climate Assessment and Policy&nbsp;
+			| (ACCAP).
+		p
+			a(href='http://nsidc.org/data/docs/noaa/g00799_arctic_southern_sea_ice/') Walsh and Johnson/Navy-NOAA Joint Ice Center&nbsp;&nbsp;
+			| Early version of pan-Arctic digital database of Arctic sea ice concentrations. Grids cover the pre-satellite 
+			| (passive microwave) period and are synthesized from various sources. Resolution is 60 n miles in space and monthly in time.
+			em &nbsp;Described in: Walsh and Johnson, 1979, J. Phys. Oceanography, 9, 58–591.
+		p
+			a(href='http://www.public.navy.mil/fltfor/cnmoc/Pages/navo_home1.aspx') Naval Oceanographic Office (NAVOCEANO)&nbsp;&nbsp;
+			| Oversees the Naval Ice Center (NAVICE), which provides worldwide operational ice analyses for the US military 
+			| and government agencies as well as allied nations. Sea ice maps for the Alaskan and Greenland sectors were compiled 
+			| into yearbooks for the period 1953–1971. Hard copies of yearbooks are held by the&nbsp;
+			a(href='http://nsidc.org/') National Snow and Ice Data Center&nbsp;
+			| (NSIDC). In 1972, ice charting was transitioned to the predecessor of the
+			a(href='http://www.natice.noaa.gov/') &nbsp;National Ice Center.
+		p
+			a(href='http://zubril.ru/docs/21/index-826372.html?page=11#171722') Japan Meteorological Agency&nbsp;&nbsp;
+			| Monitors sea ice in the Sea of Okhotsk from November to July. Results of monitoring are published for public use.
+			p
+			a(href='http://www.natice.noaa.gov/index.html') Navy-NOAA Joint Ice Center Climatology&nbsp;&nbsp;
+			| The National Ice Center began in 1976 as the Joint Ice Center in 1976, comprised of personnel from NOAA 
+			| and the US Navy. In 1995, the Joint Ice Center became the National Ice Center as it expanded to include 
+			| the US Coast Guard. Coast Guard aircraft, icebreakers, and Marine Safety Offices contribute valuable platforms 
+			| for onsite aerial and ship observations, as well as accurate and timely ship and station reports. 
+			| Ice charts dating back to 1972 are from predecessor organization. Hard-copy (paper) charts produced by analysts 
+			| are subsequently scanned and digitized. Ice charts are based mainly on satellite imagery, supplemented by aircraft, 
+			| ship and shore reports.
+		p
+			a(href='http://nsidc.org/data/docs/daac/nsidc0079_bootstrap_seaice.gd.html') NSIDC Nimbus-7 SMMR Arctic Sea Ice 
+			| Concentrations&nbsp;&nbsp;
+			a(href='http://nsidc.org/')&nbsp;The National Snow and Ice Data Center&nbsp;&nbsp;
+			| (NSIDC) supports research into our world's frozen realms: the snow, ice, glaciers, frozen ground, 
+			| and climate interactions that make up Earth's cryosphere. NSIDC manages and distributes scientific data, 
+			| creates tools for data access, supports data users, performs scientific research, and educates the public 
+			| about the cryosphere.

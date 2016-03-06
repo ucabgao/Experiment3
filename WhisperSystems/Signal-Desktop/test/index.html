@@ -1,0 +1,140 @@
+<html>
+
+<head>
+  <title>TextSecure test runner</title>
+  <link rel="stylesheet" href="../components/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha">
+  </div>
+  <div id="tests">
+  </div>
+  <script type='text/x-tmpl-mustache' id='conversation'>
+      <div class='discussion-container'></div>
+      <div class='send-message-area'>
+          <div class='message-composer'>
+              <form class='send'>
+                  <input class='send-message' rows='6' type='textarea'>
+                  <div class='attachments'>
+                    <input type='file' name='files[]' multiple class='file-input'>
+                  </div>
+              </form>
+          </div>
+          <div class='extension-details'>
+              <ul>
+                  <li>Signal for Chrome</li>
+                  <li><a href="https://github.com/whispersystems">Version 0.1</a></li>
+                  <li>by <a href="http://whispersystems.org">Open Whisper Systems</a></li>
+                  <li><a href="http://support.whispersystems.org/">Need Help?</a></li>
+              </ul>
+          </div>
+      </div>
+  </script>
+  <script type='text/x-tmpl-mustache' id='message'>
+      {{> avatar }}
+      <div class="bubble">
+          <div class='sender'>{{ sender }}</div>
+          <div class='attachments'></div>
+          <p class="content">{{ message }}</p>
+          <div class='meta'>
+            <span class='timestamp' data-timestamp={{ timestamp }}></span>
+            <span class='status hide'></span>
+          </div>
+      </div>
+  </script>
+  <script type='text/x-tmpl-mustache' id='contact'>
+      <div class='avatar' style='background-image: url({{ contact_avatar }});'></div>
+      <div class='contact-details'>
+          <h3>
+          {{ contact_name }}
+          </h3>
+          <p class='last-message'>
+          {{ last_message }}
+          </p>
+          <span class='last-timestamp'>
+          {{ last_message_timestamp }}
+          </span>
+      </div>
+  </script>
+  <script type='text/x-tmpl-mustache' id='new-message-form'>
+    <form class='send message'>
+      <input type='text' name='number' class='number' placeholder='Phone number'>
+      <div class='send-message-area'>
+          <div class='message-composer'>
+              <input name='message' class='send-message' rows='6' type='textarea'>
+              <div class='attachments'> Add Files </div>
+              <input type='submit'>
+          </div>
+          <div class='extension-details'>
+              <ul>
+                  <li>Signal for Chrome</li>
+                  <li><a href="https://github.com/whispersystems">Version 0.1</a></li>
+                  <li>by <a href="http://whispersystems.org">Open Whisper Systems</a></li>
+                  <li><a href="http://support.whispersystems.org/">Need Help?</a></li>
+              </ul>
+          </div>
+      </div>
+    </form>
+  </script>
+  <script type='text/x-tmpl-mustache' id='new-group-form'>
+    <form class='send group'>
+      <div><input name='name' class='name' placeholder='Group Name'></div>
+      <div><input name='numbers' class='numbers' ></div>
+      <div class='send-message-area'>
+          <div class='message-composer'>
+              <input class='send-message' rows='6' type='textarea'>
+              <div class='attachments'> Add Files </div>
+              <input type='submit'>
+          </div>
+          <div class='extension-details'>
+              <ul>
+                  <li>Signal for Chrome</li>
+                  <li><a href="https://github.com/whispersystems">Version 0.1</a></li>
+                  <li>by <a href="http://whispersystems.org">Open Whisper Systems</a></li>
+                  <li><a href="http://support.whispersystems.org/">Need Help?</a></li>
+              </ul>
+          </div>
+      </div>
+    </form>
+  </script>
+
+  <script type="text/javascript" src="test.js"></script>
+  <script type="text/javascript" src="blanket_mocha.js"></script>
+
+  <script type="text/javascript" src="../js/components.js"></script>
+  <script type="text/javascript" src="../js/database.js"></script>
+  <script type="text/javascript" src="../js/storage.js"></script>
+  <script type="text/javascript" src="../js/axolotl_store.js"></script>
+  <script type="text/javascript" src="../js/libtextsecure.js"></script>
+
+  <script type="text/javascript" src="../js/libphonenumber-util.js"></script>
+  <script type="text/javascript" src="../js/models/messages.js" data-cover></script>
+  <script type="text/javascript" src="../js/models/conversations.js" data-cover></script>
+  <script type="text/javascript" src="../js/conversation_controller.js" data-cover></script>
+
+  <script type="text/javascript" src="../js/chromium.js"></script>
+
+  <script type="text/javascript" src="../js/views/whisper_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/list_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/group_update_view.js"></script>
+  <script type="text/javascript" src="../js/views/attachment_view.js"></script>
+  <script type="text/javascript" src="../js/views/timestamp_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/message_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/message_list_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/conversation_list_item_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/conversation_list_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/conversation_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/new_conversation_view.js" data-cover></script>
+  <script type="text/javascript" src="../js/views/conversation_search_view.js"></script>
+
+  <script type="text/javascript" src="libphonenumber_util_test.js"></script>
+  <script type="text/javascript" src="views/whisper_view_test.js"></script>
+  <script type="text/javascript" src="views/group_update_view_test.js"></script>
+  <script type="text/javascript" src="views/message_view_test.js"></script>
+  <script type="text/javascript" src="views/list_view_test.js"></script>
+  <script type="text/javascript" src="views/conversation_search_view_test.js"></script>
+  <script type="text/javascript" src="models/conversations_test.js"></script>
+  <script type="text/javascript" src="models/messages_test.js"></script>
+  <script type="text/javascript" src="storage_test.js"></script>
+</body>
+</html>

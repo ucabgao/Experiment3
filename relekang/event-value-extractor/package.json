@@ -1,0 +1,38 @@
+{
+  "name": "event-value-extractor",
+  "description": "Extract value from change events",
+  "main": "./lib/index.js",
+  "scripts": {
+    "prepublish": "babel index.js --out-dir lib",
+    "lint": "eslint . || true",
+    "test": "ava",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "rules": {
+      "semi": [
+        2,
+        "never"
+      ]
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.9.1",
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.0",
+    "babel-eslint": "^4.1.3",
+    "babel-preset-es2015": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^0.1.1",
+    "eslint-plugin-react": "^3.5.1",
+    "semantic-release": "^4.3.5",
+    "sinon": "^1.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/relekang/event-value-extractor.git"
+  }
+}

@@ -1,0 +1,17 @@
+logs
+*.log
+
+node_modules
+
+browserify-*.js
+
+*-credentials.json
+
+
+client/components/external
+crawl/config.json
+
+database/_storage/*
+
+notes.md
+*.txt

@@ -1,0 +1,22 @@
+.tool-panel {
+  position: relative;
+}
+
+.info-panel {
+  .clickable-property {
+    &:hover {
+      cursor: pointer;
+      color: rgb(39, 125, 197);
+    }
+  }
+
+  .sidebar-panel {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    .sidebar-pane-title  {
+      overflow: visible;
+    }
+  }
+}

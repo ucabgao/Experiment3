@@ -1,0 +1,59 @@
+{
+  "chipper": {
+    "sha": "60e3a835364517fddf8bebc759b9ab3d3e2c2afc",
+    "branch": "master"
+  },
+  "sherpa": {
+    "sha": "bf15240caf4ab055d45b669a5a2243b497fc3511",
+    "branch": "master"
+  },
+  "sun": {
+    "sha": "85bc9dce280b38a906c95130d44700e04f5fe523",
+    "branch": "master"
+  },
+  "scenery-phet": {
+    "sha": "80f5f48dc006b1fcfe60aa03b64ac7969e6789e6",
+    "branch": "master"
+  },
+  "scenery": {
+    "sha": "29921a40d8ee2823daae737d6e12a511258ffbc2",
+    "branch": "master"
+  },
+  "phetcommon": {
+    "sha": "49183543035c2e169dff7deedb6e49f6c58b0afa",
+    "branch": "master"
+  },
+  "phet-core": {
+    "sha": "c98d56c366b265802198a7f3eeee8a7f7644215b",
+    "branch": "master"
+  },
+  "kite": {
+    "sha": "294d830b8e7be6d94b53310c845561defe8b522e",
+    "branch": "master"
+  },
+  "joist": {
+    "sha": "0e1ece9bd10ef5daab86dd534cc9817573baa82e",
+    "branch": "master"
+  },
+  "dot": {
+    "sha": "0d8e4292ea836baab14230c20e0f07b7a18dbf28",
+    "branch": "master"
+  },
+  "brand": {
+    "sha": "0f9ee9b8ca1a0e121f66d57109bca59f05c2ef2c",
+    "branch": "master"
+  },
+  "axon": {
+    "sha": "a9d4cbeec06ad2f0231d5a2d76a725b90292a263",
+    "branch": "master"
+  },
+  "assert": {
+    "sha": "e9e725994176afd0103aff427acda10bf31192c4",
+    "branch": "master"
+  },
+  "least-squares-regression": {
+    "sha": "45c73ede0f9296ec9ffbf421d8e6dc6407509bc5",
+    "branch": "master"
+  },
+  "comment": "# least-squares-regression 1.0.0-dev.10 Mon Feb 16 2015 20:04:00 GMT-0700 (Mountain Standard Time)"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:optionsURL>chrome://ffdawfix/content/preferences.xul
+		</em:optionsURL>
+		<em:id>ffdawfix@dclan.ru</em:id>
+		<em:iconURL>resource://ffdawfix/img/icon.png</em:iconURL>
+		<em:localized>
+			<Description>
+				<em:locale>ru-RU</em:locale>
+				<em:name>Смутные Времена под FireFox</em:name>
+				<em:description>Исправления, позволяющие играть в Смутные Времена
+					под Firefox
+				</em:description>
+				<em:creator>Дмитрий Новиков</em:creator>
+			</Description>
+		</em:localized>
+
+		<em:name>DarkAgesWorld in Firefox</em:name>
+		<em:version>0.3.6</em:version>
+		<em:description>Fixes allowing to play DarkAgesWorld in Firefox
+		</em:description>
+		<em:updateURL>http://rakemaster.github.com/ffdawfix/update.rdf</em:updateURL>
+		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcHq0xbSjhai7RYk7F18dLkx+gzGYZ350yNP8oTTBvDI5URHokLc0podE9xsTsH81V3vBZz4jqvnw05DnkiDXupcifqnvuzwmup2y8inIPPuUWOIELPpZ1PlrsZNjtU6/OVOVloBjLVbAdHeuE/ULjKFXqXilUCy9dfGHI2jqM+QIDAQAB</em:updateKey>
+		<em:creator>Dmitri Novikov</em:creator>
+		<em:optionsURL>chrome://ffdawfix/content/preferences.xul
+		</em:optionsURL>
+		<em:type>2</em:type> <!-- type=extension -->
+		<em:targetApplication>
+			<!-- Firefox -->
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>3.5</em:minVersion>
+				<em:maxVersion>99.0.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+	</Description>
+</RDF>

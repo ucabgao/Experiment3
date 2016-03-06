@@ -1,0 +1,43 @@
+MAP
+        NAME "Sea Ice Atlas"
+        IMAGECOLOR 0 0 0
+        TRANSPARENT ON
+        SIZE 256 256
+        STATUS ON
+        CONFIG "MS_ERRORFILE" "/var/www/html/ms_error.txt"
+        DEBUG 5
+        OUTPUTFORMAT
+                NAME png
+                DRIVER "AGG/PNG"
+                MIMETYPE "image/png"
+                IMAGEMODE RGBA
+                EXTENSION "png"
+        END
+        PROJECTION
+                "init=epsg:3338"
+        END
+        WEB
+                IMAGEPATH "/var/www/html/seaice-reprojected-weekly"
+                IMAGEURL "/maps/"
+                METADATA
+                        "wms_title" "Sea Ice Atlas"
+                        "wms_onlineresource" "http://tiles.snap.uaf.edu/cgi-bin/mapserv?map=hsia.map"
+                        "wms_srs" "EPSG:3338"
+                        "wms_enable_request" "*"
+                END
+        END
+
+        LEGEND
+                STATUS ON
+                LABEL
+                        COLOR 222 235 247
+                        SHADOWCOLOR 1 1 1
+                        SHADOWSIZE 2 2
+                        ANTIALIAS true
+                END
+        END
+
+       [% layers %]
+
+
+END

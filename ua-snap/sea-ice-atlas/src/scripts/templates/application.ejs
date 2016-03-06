@@ -1,0 +1,52 @@
+<div class="row">
+
+	<div class="col-md-3">
+		<div class="list-group">
+			<div data-clampedwidth=".col-md-3" data-spy="affix" class="affix" id="controlsWrapper">
+				<a id="loadingMap" class="list-group-item">
+					<h4 class="list-group-item-header">
+						<img src="img/ajax-loader.gif" /> Loading map...&hellip;
+					</h4>
+				</a>
+				<a id="mapControls" class="list-group-item active" style="display: none"></a>
+				<a id="concentrationGraphControls" class="list-group-item" style="display: none">
+					<h4 class="list-group-item-header">Graph</h4>
+					<p></p>
+				</a>
+				<a id="thresholdGraphicControls" class="list-group-item" style="display: none">
+					<h4 class="list-group-item-header">Visualization</h4>
+					<p>Ice coverage by % threshold</p>
+				</a>
+				<a id="mapAnimationControls" class="list-group-item" style="display: none"></a>
+			</div>
+		</div>
+	</div>
+
+	<!--start 9-column map block-->
+	<div class="col-md-9">
+		<div id="mapGroupWrapper">
+			<div id="animationBuffering" style="display: none">
+				<img src="img/ajax-loader.gif" /> Buffering&hellip;
+			</div>
+			<h3 id="mapTitle">Historical Sea Ice Concentration</h3>
+			<div id="mapWrapper">
+				<div id="map" style="height: 650px"></div>
+				<img id="legend" src="http://tiles.snap.uaf.edu/cgi-bin/mapserv?map=/var/www/html/seaiceatlas.map&SERVICE=WMS&VERSION=1.1.1&layer=seaiceatlas&REQUEST=getlegendgraphic&FORMAT=image/png" />
+			</div>
+		</div>
+		<div id="chartWrapper" style="display: none">
+			<h3>Average sea ice concentration</h3>
+			<div id="chart"></div>
+		</div>
+		<div id="graphicWrapper" style="display: none">
+			<h3>Open Water Over Time</h3>
+
+				<div>
+				<input id="thresholdSlider" type="text" data-slider-id="thresholdSliderControl" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="30"/>
+	      			<span>Threshold: <span id="thresholdSliderLabel">30</span></span>
+	      			</div>
+	      			<div id="thresholdTarget"></div>
+			<div id="openWaterGraphic"></div>
+		</div>
+	</div>
+</div>

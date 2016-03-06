@@ -1,0 +1,94 @@
+#locale-status {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#locale-status.good {
+    color: #28d000;
+}
+
+#locale-status.not-so-good {
+    color: #cfdd00;
+}
+
+#locale-status.warn {
+    color: #ef7a00;
+}
+
+#locale-status.bad {
+    color: #ea002d;
+}
+
+#locale-selector {
+    position: absolute; 
+    right: 30px;
+    top: 10px;
+}
+
+#locale-selector > li {
+    padding-right: 5px;
+    cursor: pointer;
+    float: left;
+}
+
+#locale-selector > li:hover {
+    text-decoration: underline;
+
+}
+
+#locale-selector > li.selected {
+    text-decoration: underline;
+}
+
+#localization-results {
+    table-layout: fixed;
+    width: 100%;
+}
+
+#localization-results th:first-child {
+    width: 100px;
+}
+
+#localization-results .missing {
+    background-color: #F5C6CF;
+}
+
+#localization-results .untranslated {
+    background-color: #F5DEC6;
+}
+
+#localization-results .unused {
+    background-color: #F2F5C6;
+}
+
+.strings-panel {
+    margin: 3px 3px 3px 3px;
+    border: 1px solid;
+    -webkit-border-radius: 3px;
+}
+
+tr.lang-entry.untranslated:hover .btn-ignore {
+    visibility: visible;
+}
+
+tr.lang-entry.ignored {
+    display: none;
+}
+
+.show-ignored tr.lang-entry.ignored {
+    display: table-row;
+}
+
+.show-ignored tr.lang-entry.ignored td {
+    opacity: 0.5;
+}
+
+.show-ignored tr.lang-entry.ignored td:first-child {
+    opacity: 1;
+}
+
+.btn-ignore {
+    visibility: hidden;
+    margin-left: 5px;
+    margin-right: 10px;
+}

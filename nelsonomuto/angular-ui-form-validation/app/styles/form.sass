@@ -1,0 +1,30 @@
+@import 'bootstrap-sass-official/assets/stylesheets/bootstrap'
+
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/"
+
+$errorColor: darkorange
+
+form
+  @extend .form-group
+
+  label
+    display: block
+  input
+    &[type="checkbox"]
+      width: inherit
+      display: inline
+
+    @extend .form-control
+
+  .ValidationLiveSuccess
+    border: lightgreen 1px solid
+
+  .requiredFieldLabel
+    &:after
+      content: ' *'
+      color: $errorColor
+
+  .CustomValidationError
+    position: relative
+    font-size: 0.8em
+    color: $errorColor

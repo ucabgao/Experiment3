@@ -1,0 +1,217 @@
+extends layout
+
+block content
+
+		.container
+			h1 Sea ice glossary
+
+			#ice-carousel.carousel.slide.pull-right
+					// Indicators
+					ol.carousel-indicators
+							li.active(data-slide-to='0', data-target='#ice-carousel')
+							li(data-slide-to='1', data-target='#ice-carousel')
+							li(data-slide-to='2', data-target='#ice-carousel')
+							li(data-slide-to='3', data-target='#ice-carousel')
+							li(data-slide-to='4', data-target='#ice-carousel')
+							li(data-slide-to='5', data-target='#ice-carousel')
+
+					
+					// Wrapper for slides
+					.carousel-inner
+							.item.active
+								img(alt='very open drift', src='img/1-2-tenths.jpg')
+								.carousel-caption
+											p
+													| 1&ndash;2 tenths &ldquo;very open drift&rdquo;
+
+							.item
+								img(alt='open to very open drift', src='img/3-4-tenths.jpg')
+								.carousel-caption
+											p
+													| 3&ndash;4 tenths &ldquo;open to very open drift&rdquo;
+							
+							.item
+								img(alt='open drift', src='img/5-6-tenths.jpg')
+								.carousel-caption
+											p
+													| 5&ndash;6 tenths &ldquo;open drift&rdquo;
+							
+							.item
+								img(alt='close pack', src='img/7-8-tenths.jpg')
+								.carousel-caption
+											p
+													| 7&ndash;8 tenths &ldquo;close pack&rdquo;
+							.item
+								img(alt='very close pack', src='img/9-tenths.jpg')
+								.carousel-caption
+											p
+													| 9 tenths &ldquo;very close pack&rdquo;
+							.item
+								img(alt='compact', src='img/10-tenths.jpg')
+								.carousel-caption
+											p
+													| 10 tenths &ldquo;compact&rdquo;
+								
+					// Controls
+					a.left.carousel-control(data-slide='prev', href='#ice-carousel')
+						span.glyphicon.glyphicon-chevron-left
+					a.right.carousel-control(data-slide='next', href='#ice-carousel')
+						span.glyphicon.glyphicon-chevron-right
+
+			.panel.panel-info.pull-right
+				.panel-heading
+					h4.panel-title Atlas-specific sea ice  terms
+				
+				.panel-body
+					p
+					strong The Historical Sea Ice Atlas calculates and visualizes these aspects of sea ice measurements
+					p
+					strong Sea ice area:&nbsp;&nbsp;
+					| Ice extent minus the open water area within the ice edge. To estimate ice extent, scientists set a 
+					| threshold percentage, and count every pixel meeting or exceeding that threshold 
+					| as "ice-covered." To estimate ice area, 
+					| scientists calculate the percentage of sea ice in each pixel, multiply by the 
+					| pixel area, and total the amounts. The Historical Sea Ice Atlas uses a threshold percentage of 15%&ndash;100%, 
+					| depending on user's context.
+
+					p
+					strong Sea ice concentration:&nbsp;&nbsp;
+					| Amount of sea ice covering an area. Written as the ratio of sea ice 
+					| to water, either a fraction (8/10) or percentage (80%) of sea ice coverage. 
+					| <30% sea ice concentration = navigable by ship. 
+					| >90% is considered solid ice. 
+
+					p
+					strong Sea ice extent:&nbsp;&nbsp;
+					| Total area covered by some amount of sea ice at a given time, including 
+					| open water between  floes. The Atlas considers sea ice &ldquot;present&rdquo; 
+					| if sea ice concentration is >15%. Thus, sea ice extent is the area of 
+					| sea covered by at least 15% ice for a specific date. The  
+					| Atlas reports monthly averages, so the sea ice extent for a given month represents 
+					| the measured or interpolated sea ice extent closest to the middle of that month.
+
+					p
+					strong Sea ice thickness:&nbsp;&nbsp;
+					| Average thickness from sea ice surface-to-underside of a specified 
+					| sea ice extent. Can be measured directly by coring or drilling, 
+					| but satellites allow for faster collection of thickness data.
+ 
+			p
+			strong Anchor ice:&nbsp;&nbsp;
+			| Submerged sea ice attached or anchored to the bottom, irrespective of the nature of its formation.
+			p
+			strong Compact pack ice:&nbsp;
+			| Pack ice in which sea ice concentration is 10/10 (100%) and no water is visible.
+			p
+			strong Concentration:&nbsp;
+			| See sea ice concentration (sidebar).
+			p
+			strong Consolidated pack ice:&nbsp;
+			| Pack ice in which sea ice concentration is 10/10 (100%) and floes are frozen together.
+			p
+			strong Drift ice:&nbsp;
+			| Sea ice that moves because of  winds, currents, or other forces.
+			p
+			strong Fast ice:&nbsp;
+			| Sea Ice that is anchored to the shore, ocean bottom, an ice wall, an ice front, 
+			| or between shoals or grounded icebergs. Fast ice is defined by the fact that it does 
+			| not move with winds or currents. May be formed in situ from sea water or by 
+			| pack ice freezing to the shore, and may extend a few meters or several hundred km from 
+			| the coast. If it is thicker than about 2 meters above sea level, it is called an 
+			| ice shelf. 
+			p
+			strong Fast ice boundary:&nbsp;
+			| Boundary between fast ice and pack ice.
+			p
+			strong Fast ice edge:&nbsp;
+			| Boundary between fast ice and open water.
+			p
+			strong First-year ice:&nbsp;
+			| Sea ice of not more than one winter's growth, developing from young ice, with a thickness of 30 cm to 2 m.
+			p
+			strong Floe:&nbsp;
+			| Any relatively flat piece of sea ice 20 m or more across. Floes are subdivided 
+			| according to horizontal extent:&nbsp;  SMALL (20–10 m across); MEDIUM (100–500 m across); BIG (500 m–2 km across); VAST (2–10.8 km across); GIANT (> 10.8 km across).
+			p
+			strong Icefoot:&nbsp;
+			| A narrow fringe of sea ice attached to the coast, unmoved by tides and remaining after the fast ice has broken free.
+			p
+			strong Ice thickness:&nbsp;
+			| See sea ice thickness (sidebar).
+			p
+			strong Lead:&nbsp;
+			| A long, linear area of open water that ranges from a few meters to over a kilometer in width, and tens of km long, which develops as sea ice pulls apart. 
+			p
+			strong Marginal ice zone:&nbsp;
+			| Transition zone between the ice edge (often defined by the 15% contour of ice concentration) and the boundary of ice having a concentration > 80%.
+			p
+			strong Multi-year ice:&nbsp;
+			| Old sea ice 3 m or more thick that has survived at least two summers' melt. Hummocks are
+			| even smoother than in second-year ice, and the ice is almost salt free. The color, where snow free, is
+			| usually blue. The melt pattern consists of large interconnecting irregular puddles and a well
+			| developed drainage system.
+			p
+			strong Marginal ice zone:&nbsp;
+			| Transition zone between the ice edge (often defined by the 15% contour of ice concentration) and the boundary of ice having a concentration > 80%.
+			p
+			strong Navigable:&nbsp;
+			| Characterization given to a waterway that is passable by ship, even with the presence of sea ice. Vessel capability determines navigability of sea ice.
+			p
+			strong Open lead:&nbsp;
+			| A lead that connects two open bodies of water; ships can traverse between them through this lead. It also refers to a lead where open water is found, or a lead that has not completely frozen.
+			p
+			strong Open pack ice:&nbsp;
+			| Pack ice in which the concentration is 4/10 to 6/10 (40–60%) with many leads and polynyas, and floes generally not in contact with one another.
+			p
+			strong Open water:&nbsp;
+			| A large area of freely navigable water in which floes may be present in concentration under 1/10 (10%). If no sea ice is present, the area may be considered open water even if icebergs are present.
+			p
+			strong Pack ice:&nbsp;
+			| Sea ice that not attached to the shoreline and that drifts in response to winds, currents, and other forces. Some prefer the generic term drift ice, and reserve pack ice to mean drift ice that is closely packed.
+			p
+			strong Pancake ice:&nbsp;
+			| Predominantly circular pieces of sea ice from 30 cm &ndash; 3 m in diameter and up to 10 cm thick,
+			| with raised rims due to the pieces striking against each other.
+			p
+			strong Permanent ice zone:&nbsp;
+			| A region that is covered in sea ice year-round. Most of the sea ice in the permanent ice zone is multi-year ice, but younger ice and open water may still be present. The permanent ice zone is what remains in summer after all melting has occurred (also known as the summer minimum extent).
+			p
+			strong Polynya:&nbsp; 
+			| A wide area of open water in an area of pack ice. A polynya differs from a lead in that leads are long and narrow.
+			p
+			strong Remote sensing:&nbsp; 
+			| Viewing something from a distance. Satellites and other instruments are used to collect a variety of remote sensing data:&nbsp;
+			ul
+				li
+					em visible light:&nbsp;
+					| light that our eyes can detect
+				li
+					em infrared light:&nbsp;
+					| longer wavelengths than those of visible light (can be thought of as heat)
+				li
+					em passive microwave:&nbsp; 
+					| measures objects that emit even longer wavelengths than infrared
+				li
+					em active microwave:&nbsp;
+					| satellite sensors that emit microwaves toward Earth's surface and „read&rdquo; the energy returned to the sensor.
+			p
+			strong Sea ice:&nbsp; 
+			| Any form of ice found at sea that has originated from the freezing of seawater.
+			p
+			strong Sea ice maximum extent:&nbsp;
+			| Day of the year when the sea ice covers the largest area of the Arctic (or Antarctic).
+			p
+			strong Sea ice minimum extent:&nbsp;
+			| Day of the year when the sea ice covers the smallest area of the Arctic (or Antarctic).
+			p
+			strong Second-year ice:&nbsp;
+			| Sea ice that has not melted in the first summer of its existence. By the end of the second winter, it attains an ice thickness of 2 meters or more and rises higher out of the water than first-year ice.
+			p
+			strong Shore lead:&nbsp; 
+			| A stretch of navigable water between pack ice and the shore. Vessel capability determines navigability of sea ice.
+			p
+			strong Summer minimum extent:&nbsp; 
+			| The permanent ice zone that remains in summer after all melting has occurred.
+			p
+			strong Very close pack ice:&nbsp;
+			| Pack ice where sea ice concentration >9/10 (90%), and floes are tightly packed to frozen together. Very little, if any, seawater is visible.

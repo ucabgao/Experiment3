@@ -1,0 +1,7 @@
+.git
+database/_storage/*
+_storage/
+design
+doc
+# test/manual
+*.md

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Marionette SpecRunner</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../node_modules/mocha/mocha.css" />
+
+    <script src="../../../../node_modules/mocha/mocha.js"></script>
+    <script src="../../../../node_modules/chai/chai.js"></script>
+    <script src="../../../../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../../../../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <script src="../../../../node_modules/chai-jq/chai-jq.js"></script>
+
+    <script data-main="../../inspector/main.js" src="../../lib/requirejs/require.js"></script>
+    <script src="inspector_test_setup.js"></script>
+
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="fixtures" hidden></div>
+    <div style="display:none;" data-region="app-region" class="app"></div>
+  </body>
+</html>

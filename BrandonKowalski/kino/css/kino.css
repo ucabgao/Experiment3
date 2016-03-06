@@ -1,0 +1,39 @@
+.container {
+    width: 100%;
+}
+.kino-wrapper {
+    padding-top: 25px;
+    position: relative;
+    margin: 0 auto 0 auto;
+    width: 640px;
+    text-align: center;
+}
+
+.kino-video-deck {
+    background-color: white;
+    display: none;
+}
+
+.builder-wrapper {
+    display: none;
+}
+
+.kino-url-wrapper {
+    display: none;
+}
+
+#kinoURL {
+    width: 500px;
+}
+
+input {
+    width: 175px;
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    font-size: 10px;
+    bottom: 10px;
+    text-align: center;
+}

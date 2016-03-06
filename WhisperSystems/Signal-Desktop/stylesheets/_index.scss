@@ -1,0 +1,264 @@
+.gutter {
+  padding: $header-height 0 0;
+}
+
+.conversation-stack,
+.new-conversation, .inbox, .gutter {
+  height: 100%;
+}
+
+.container, .scrollable {
+  height: 100%;
+  overflow: auto;
+}
+
+.gutter {
+  float: left;
+  margin: 10px 0;
+  width: 300px;
+  .conversations {
+    overflow-y: scroll;
+    height: calc(100% - 20px);
+    width: 100%;
+  }
+}
+
+.socket-status {
+  float: right;
+  padding: 6px;
+  -webkit-app-region: no-drag;
+
+  * {
+    display: inline;
+    cursor: pointer;
+    padding-left: 20px;
+    border-radius: $header-height;
+
+    &:hover {
+      background: url('/images/refresh.png') center;
+    }
+  }
+  .connecting .icon {
+    background-color: $blue;
+  }
+  .closing {
+    background-color: $blue_l;
+  }
+  .closed {
+    background: url('/images/error_red.png') no-repeat left center;
+  }
+}
+
+.conversation-stack {
+  padding-left: 300px;
+  padding-top: $header-height;
+  .conversation {
+    display: none;
+  }
+  .conversation:first-child {
+    display: block;
+  }
+}
+
+.conversation-header {
+  border-bottom: solid 1px darken($grey_l, 10%);
+  margin-bottom: 4px;
+  padding-bottom: 5px;
+  .avatar {
+    float: left;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+  }
+  @media(min-width:900px) {
+    .avatar {
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+    }
+  }
+}
+.menu.conversation-menu {
+  button.drop-down {
+    background: url('/images/arrow_drop_down.png') no-repeat center;
+  }
+}
+
+input.search {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: url('/images/x.png') no-repeat center;
+    background-size: cover;
+  }
+  &::-webkit-search-cancel-button:hover {
+    cursor: pointer;
+  }
+}
+
+.tool-bar {
+  button.show-new-conversation {
+    float: right;
+    height: $header-height;
+    width: $header-height;
+    border: 0;
+    outline: 0;
+    font: 300 36px $roboto;
+    color: white;
+    background: url('/images/pencil.png') no-repeat center center;
+
+    &:hover {
+      background-color: darken($grey_l, 3%);
+    }
+  }
+
+  input.search {
+    height: $header-height - 10px;
+    width: 270px;
+    background: rgba(255,255,255,0.2);
+    margin: 10px;
+    padding: 5px;
+
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+
+    &.active, &:active, &:focus {
+      background: white;
+
+      &::-webkit-input-placeholder {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+.last-timestamp {
+  font-size: smaller;
+  float: right;
+  margin: 0 10px;
+}
+
+.new-contact {
+  display: none;
+  cursor: pointer;
+  opacity: 0.7;
+  background: $grey_l;
+  .contact-details .number {
+    display: block;
+    font-style: italic;
+    padding-right: 8px;
+  }
+
+  &.valid {
+    opacity: 1.0
+  }
+}
+
+.index {
+  max-width: 1300px;
+  color: $grey_d;
+  background: #2eace0;
+
+  .gutter .new-group-update-form {
+    display: none;
+    padding: 0.5em;
+  }
+
+  .last-message {
+    margin: 6px 0;
+    font-size: small;
+    font-weight: 300;
+    color: $grey;
+  }
+
+  .gutter .timestamp {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    color: #888;
+  }
+
+}
+
+.conversations .unread .contact-details {
+    .name,
+    .last-message,
+    .last-timestamp {
+      font-weight: bold;
+    }
+}
+
+.hint {
+  margin: 10px;
+  padding: 1em;
+  border-radius: 10px;
+  color: white;
+  border: 2px dashed white;
+
+  h3 {
+    margin-top: 5px;
+  }
+
+  &.firstRun {
+    position: absolute;
+    top: 0;
+    left: 302px;
+    width: 225px;
+
+    &:before, &:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: -35px;
+      width: 0;
+      height: 0;
+      border: solid 10px white;
+      border-color: transparent white transparent transparent;
+      transform: scaleX(2.5) scaleY(0.75);
+    }
+    &:after {
+      border-color: transparent #2eace0 transparent transparent;
+      left: -30px;
+    }
+  }
+}
+
+.conversation.placeholder {
+  text-align: center;
+  padding-top: 100px;
+  color: #aaa;
+}
+.contact.placeholder {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: transparent;
+  border-radius: 10px;
+  color: white;
+  border: 2px dashed white;
+  overflow: visible;
+  p { color: white; }
+  &:before, &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -35px;
+    left: 15px;
+    width: 0;
+    height: 0;
+    border: solid 10px white;
+    border-color: transparent transparent white transparent;
+    transform: scaleY(2.5) scaleX(0.75);
+  }
+  &:after {
+    border-color: transparent transparent #2eace0 transparent;
+    top: -30px;
+  }
+}

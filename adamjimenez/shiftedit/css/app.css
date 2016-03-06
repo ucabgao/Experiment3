@@ -1,0 +1,898 @@
+@import url("../lib/layout-default-latest.css");
+@import url("../lib/jquery-ui.css");
+@import url("../lib/menubar/jquery.menubar.css");
+@import url("../lib/contextMenu/jquery.contextMenu.css");
+@import url("../lib/combobox/ui.combobox.css");
+@import url("../lib/jstree/themes/default/style.css");
+@import url("../lib/ui.tabs.overflowResize/ui.tabs.overflowResize.css");
+
+body{
+	font-size: 12px;
+	margin: 0;
+}
+
+textarea{
+	background-image: none !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+    box-shadow: inset 0 0 1px 1px black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+/* START LAYOUT */
+.ui-layout-container .ui-layout-pane {
+	padding: 0;
+}
+
+/* GLOBAL LAYOUT STYLES */
+.ui-layout-content {
+	border-top: 0 !important; /* tab-buttons above this DIV already has a border-bottom */
+	padding: 0;
+}
+
+/* show tree menu */
+.ui-layout-west .ui-layout-content{
+	overflow: visible;
+}
+
+.ui-layout-content > div {
+    height: 100%;
+}
+
+/* TAB-THEME ADJUSTMENTS */
+.ui-tabs-panel {
+	font-size: 1em !important;
+	padding: 0 !important;
+}
+
+.ui-layout-west li[role=tab]{
+    width: 30px;
+}
+
+.ui-tabs-anchor{
+    float: left;
+    height: 21px;
+    line-height: 21px;
+}
+
+.ui-tabs .ui-tabs-panel{
+    background: initial;
+}
+
+/*
+ *	CENTER-PANE TABS
+ *
+ *	These tabs have white-space around them,
+ *	so the content-div provides the border for the tabs
+ */
+.ui-layout-pane-center {
+	padding: 10px;
+}
+
+.ui-tabs .ui-tabs-nav, .ui-layout-container .ui-layout-pane{
+	border-radius: 0;
+}
+
+div.buttons {
+	float: right;
+	margin-right: 200px;
+	margin-top:	0;
+}
+
+/* END LAYOUT */
+
+/* Tabs */
+li[role=tab] a {
+   padding: 2px 9px 1px;
+   margin-bottom: -1px;
+   overflow: visible;
+}
+
+li[role=tab] .ui-icon {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 2px;
+    vertical-align: bottom;
+}
+
+.addTab{
+	padding-bottom: 4px !important;
+	background-position: top;
+}
+
+/* Menubar */
+.ui-menubar .ui-menu{
+    width: 300px;
+}
+
+.ui-menubar{
+    font-size: 12px;
+}
+
+.ui-widget {
+    font-size: 12px !important;
+}
+
+.ui-menu-item a{
+	text-decoration: none;
+}
+
+.ui-autocomplete{
+	max-height: 300px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	z-index: 1000000 !important;
+}
+
+/* dialogs */
+.ui-dialog{
+	padding: 0 !important;
+}
+
+.ui-dialog-titlebar{
+	border-radius: 0 !important;
+}
+
+#refresh_site, #siteNenuBtn {
+	border-style: hidden !important;
+}
+
+.ui-button:focus{
+    outline: none;
+}
+
+.ui-widget-overlay
+{
+	background-image: none !important;
+	opacity: .50 !important; /* Make sure to change both of these, as IE only sees the second one */
+	filter: Alpha(Opacity=50) !important;
+	background-color: rgb(50, 50, 50) !important; /* This will make it darker */
+}
+
+/* START TREE */
+/*.jstree { float:left; min-width:319px; overflow:auto; padding:0px 0; }*/
+.jstree .folder { background:url('../lib/jstree/file_sprite.png') right bottom no-repeat; }
+.jstree .file { background:url('../lib/jstree/file_sprite.png') 0 0 no-repeat; }
+.jstree .file-pdf { background-position: -32px 0 }
+.jstree .file-as { background-position: -36px 0 }
+.jstree .file-c { background-position: -72px 0 }
+.jstree .file-iso { background-position: -108px 0 }
+.jstree .file-htm, .jstree .file-html, .jstree .file-xml, .jstree .file-xsl { background-position: -126px 0 }
+.jstree .file-cf { background-position: -162px 0 }
+.jstree .file-cpp { background-position: -216px 0 }
+.jstree .file-cs { background-position: -236px 0 }
+.jstree .file-sql { background-position: -272px 0 }
+.jstree .file-xls, .jstree .file-xlsx { background-position: -362px 0 }
+.jstree .file-h { background-position: -488px 0 }
+.jstree .file-crt, .jstree .file-pem, .jstree .file-cer { background-position: -452px -18px }
+.jstree .file-php { background-position: -108px -18px }
+.jstree .file-jpg, .jstree .file-jpeg, .jstree .file-png, .jstree .file-gif, .jstree .file-bmp { background-position: -126px -18px }
+.jstree .file-ppt, .jstree .file-pptx { background-position: -144px -18px }
+.jstree .file-rb { background-position: -180px -18px }
+.jstree .file-text, .jstree .file-txt, .jstree .file-md, .jstree .file-log, .jstree .file-htaccess { background-position: -254px -18px }
+.jstree .file-doc, .jstree .file-docx { background-position: -362px -18px }
+.jstree .file-zip, .jstree .file-gz, .jstree .file-tar, .jstree .file-rar { background-position: -416px -18px }
+.jstree .file-js { background-position: -434px -18px }
+.jstree .file-css { background-position: -144px 0 }
+.jstree .file-fla { background-position: -398px 0 }
+
+/* force tree grid height to 100% */
+.jstree-grid-wrapper{
+	display: table-cell;
+}
+
+.jstree-grid-header-regular{
+	background-color: transparent !important;
+}
+
+.jstree-grid-cell{
+	background-image: none !important;
+}
+
+.vakata-context .vakata-contextmenu-shortcut{
+    display: inline;
+    opacity: 1;
+}
+
+.vakata-context {
+     z-index: 999 !important;
+}
+
+.vakata-context ul {
+    z-index: 2;
+}
+
+.filter{
+	width: 100%;
+	display: block;
+}
+/* END TREE */
+
+#revisionDiff {
+	height: 100%;
+}
+
+.revisionFile-menu {
+	height: 200px;
+}
+
+.revisionFile-button{
+	width: auto !important;
+}
+
+#serverProgress {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100000; /* higher than modal windows */
+	margin: 10px;
+	opacity: 0.8;
+	text-align: center;
+}
+
+#serverProgress strong{
+    /*background: #f9edbe;*/
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #f0c36d;
+}
+
+#shortcutsSheet{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	background: #000;
+	color: white;
+	overflow: auto;
+	z-index: 10;
+	border-radius: 10px;
+	margin: 10px;
+	opacity: 0.8;
+}
+/* syntax errors */
+.editor_status{
+	/*background: #C8E2F9;*/
+	font-size: 11px;
+	padding: 2px;
+	overflow: none;
+	white-space: nowrap;
+}
+
+.editor_status button span{
+	font-size: 10px;
+}
+
+/*
+.editor_status_alert{
+	background: #eef09f;
+}
+*/
+
+.editor_status button[disabled]{
+    opacity: 0.5;
+}
+
+.ace_gutter-cell.ace_breakpoint{
+    background-image: url(/images/icons/breakpoint.png);
+	background-position: 4px center;
+}
+
+.other_cursor{
+	position: relative;
+	font-size: 10px;
+	color: #000;
+	opacity: 0.8;
+	padding: 1px;
+	border-radius: 1px;
+}
+
+/* revisions */
+.ace_added{
+	background: #eaf2c2;
+	position: absolute;
+}
+
+.ace_removed{
+	background: #fadad7;
+	position: absolute;
+}
+
+#quickOpenSearch, #quickOpenFile{
+    width: 100%;
+}
+
+#siteMenu {
+    position: absolute;
+    z-index: 2;
+}
+
+#siteSettings p, #snippetForm p{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+#siteSettings input[name=port], #siteSettings input[name=timeout]{
+    max-width: 50px;
+}
+
+#siteSettings label, #snippetForm label{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 4px;
+    line-height: 16px;
+}
+
+#siteSettings label:first-child{
+    min-width: 110px;
+    width: 110px;
+    padding: 0;
+}
+
+#siteSettings #portContainer label, #siteSettings #timeoutContainer label{
+    min-width: auto;
+    width: auto;
+}
+
+#siteSettings label.ui-button{
+    padding: 0;
+}
+
+#siteSettings input, #siteSettings textarea, #snippetForm input{
+    flex-grow: 1;
+}
+
+#siteSettings input[type=checkbox], #snippetForm input[type=checkbox]{
+    flex-grow: 0;
+}
+
+#siteSettings .ui-menu {
+    position: absolute;
+    width: 70px;
+}
+
+#siteTabs li {
+	width: auto;
+}
+
+#cloudRadio .ui-button{
+    width: 100px;
+}
+
+#stackRadio .ui-button{
+    width: 100px;
+}
+
+#test_iframe{
+	width: 640px;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: none;
+}
+
+.revisions{
+    float: left;
+    width: 260px;
+}
+
+/* chat panel */
+#dialog-chat{
+    display: flex;
+}
+
+.chats{
+    float: left;
+    width: 80px;
+    height: 100%;
+    overflow: auto;
+}
+
+.chats ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chats a{
+    padding: 2px;
+    display: block;
+    text-decoration: none;
+}
+
+.chats .unread{
+    font-weight: bold;
+}
+
+/*
+.chats .selected{
+    background: #ccc;
+}
+*/
+
+.messagePanel{
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+}
+
+#dialog-chat #messages{
+    height: 100%;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+#dialog-chat #message{
+    width: 100%;
+    height: 80px;
+    align-self: base-line;
+}
+
+#ssh p{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+#ssh input[name=port], #ssh input[name=timeout]{
+    max-width: 50px;
+}
+
+#ssh label{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 4px;
+    line-height: 16px;
+}
+
+#ssh label:first-child{
+    min-width: 110px;
+    width: 110px;
+    padding: 0;
+}
+
+#ssh #portContainer label{
+    min-width: auto;
+    width: auto;
+}
+
+#ssh label.ui-button{
+    padding: 0;
+}
+
+#ssh input, #ssh textarea{
+    flex-grow: 1;
+}
+
+#ssh input[type=checkbox]{
+    flex-grow: 0;
+}
+
+#ssh .ui-menu {
+    position: absolute;
+    width: 70px;
+}
+
+#ssh .delete{
+    position: relative;
+    left: 40px;
+}
+
+.sshContainer{
+	overflow: hidden;
+	background: #000;
+}
+
+/* TERMINAL */
+.terminal {
+	border: #000 solid 5px;
+	font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+	font-size: 11px;
+	color: #f0f0f0;
+	background: #000;
+}
+
+.terminal div{
+    white-space: nowrap;
+}
+
+.reverse-video {
+	color: #000;
+	background: #f0f0f0;
+}
+
+#findForm{
+    padding: 6px;
+}
+
+#findForm .row{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+#findForm textarea{
+    min-height: 100px;
+    max-height: 300px;
+}
+
+#findForm input[name=port], #findForm input[name=timeout]{
+    max-width: 50px;
+}
+
+#findForm label{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 4px;
+    line-height: 16px;
+}
+
+#findForm label:first-child{
+    min-width: 110px;
+    width: 110px;
+    padding: 0;
+}
+
+#findForm label.ui-button{
+    padding: 0;
+}
+
+#findForm input, #findForm textarea{
+    flex-grow: 1;
+}
+
+#findForm input[type=checkbox]{
+    flex-grow: 0;
+}
+
+#findForm .ui-menu {
+    position: absolute;
+    width: 70px;
+}
+
+.ui-progressbar-value {
+	background-color: #ccc;
+}
+
+#uploadUrlForm p{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+#uploadUrlForm label{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 4px;
+    line-height: 16px;
+}
+
+#uploadUrlForm label:first-child{
+    min-width: 110px;
+    padding: 0;
+}
+
+#uploadUrlForm label.ui-button{
+    padding: 0;
+}
+
+#uploadUrlForm input, #uploadUrlForm textarea{
+    flex-grow: 1;
+}
+
+#uploadUrlForm input[type=checkbox]{
+    flex-grow: 0;
+}
+
+#uploadUrlForm .ui-menu {
+    position: absolute;
+    width: 70px;
+}
+
+#uploadUrlForm .delete{
+    position: relative;
+    left: 40px;
+}
+
+.prefs{
+    padding: 0 10px;
+    padding-bottom: 20px;
+}
+
+.prefs p{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.prefs label{
+    display: block;
+    padding-left: 10px;
+    padding-right: 4px;
+    line-height: 16px;
+}
+
+.prefs label:first-child{
+    min-width: 110px;
+    width: 110px;
+    padding: 0;
+}
+
+.prefs label.ui-button{
+    padding: 0;
+}
+
+.prefs input, .prefs textarea{
+    flex-grow: 1;
+}
+
+.prefs input[type=checkbox]{
+    flex-grow: 0;
+}
+
+.prefs input[type=number]{
+    width: 40px;
+}
+
+.prefs .ui-menu {
+    position: absolute;
+    width: 70px;
+}
+
+#skinUrl {
+	width: calc(100% - 30px);
+}
+
+#tabs-definitions{
+	overflow: auto;
+}
+
+#tabs-notes{
+    display: flex;
+}
+
+#notes{
+    width: 100%;
+    flex-grow: 1;
+}
+
+.ui-menu .ui-menu-divider{
+    float: left;
+    clear: left;
+}
+
+#picker{
+	position: absolute;
+	z-index: 100;
+	display: block;
+	background: #fff;
+}
+
+.preview_toolbar, .preview_toolbar .custom-combobox{
+    display: flex;
+}
+
+.preview_toolbar .custom-combobox, .preview_toolbar .custom-combobox-input{
+    flex: 2;
+}
+
+.vbox {
+    display: flex;
+    height: 100%;
+    align-content: stretch;
+    flex-direction: column;
+}
+
+.hbox {
+    display: flex;
+    align-content: stretch;
+}
+
+.hbox p{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.hbox label:first-child{
+    min-width: 110px;
+    padding: 0;
+}
+
+.flex{
+    flex: 2;
+}
+
+.newTab{
+    padding: 10px;
+}
+
+.newTab ul{
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.newTab li{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.newTab h5{
+    margin: 0;
+}
+
+.newTab .column{
+    display: block;
+    width: 25%;
+    float: left;
+    margin: 10px;
+}
+
+.editor{
+    flex-grow: 1;
+    position: relative;
+}
+
+.design{
+	overflow: hidden;
+}
+
+/* stretch site dropdown */
+#sitebar{
+	padding: 2px;
+}
+
+#sitebar span{
+    display: block;
+}
+
+#sitebar .custom-combobox-input{
+    width: calc(100% - 50px);
+}
+
+#tree-container{
+	padding: 2px 0;
+    width: 100%;
+    overflow: scroll;
+}
+
+.jstree-default .jstree-clicked{
+	background: none;
+}
+
+.jstree-default .jstree-hovered{
+	background: none;
+}
+
+.jstree-default-small > .jstree-container-ul .jstree-loading > .jstree-ocl {
+    position: relative;
+    background: none;
+}
+.jstree-default-small > .jstree-container-ul .jstree-loading > .jstree-ocl:before {
+    content: "\f110";
+    font-family: FontAwesome;
+    left:-5px;
+    position:absolute;
+    top:0;
+    animation: fa-spin 2s infinite linear;
+ }
+
+/* splashscreen */
+.splash{
+	z-index: 100;
+	color: #ccc;
+	font-size: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+	background: #222;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash .status{
+	font-size:16px;
+}
+
+.splash .slow{
+	position:absolute;
+	bottom:40px;
+	right:50px;
+}
+
+.splash .slow a{
+	color: #ccc;
+}
+
+.splash .progress{
+	width: 300px;
+	display: inline-block;
+}
+
+.splash .progressbar{
+	opacity: 0.2;
+}
+
+.newVersion{
+	position: absolute;
+	width: 260px;
+	right: 20px;
+	bottom: 20px;
+	z-index: 100;
+}
+
+.newVersion .inner{
+	position: relative;
+	padding: 20px;
+	opacity: 0.8;
+	text-align: center;
+}
+
+.newVersion .dismiss{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}
+
+.ui-dialog {
+	z-index: 100000 !important; /*higher than tinymce*/
+}
+
+/*
+.ui-menubar .ui-menu{
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 400px;
+}
+*/
+
+#args{
+	position: absolute;
+	z-index: 100;
+	font-size: 12px;
+	border: 1px solid #000;
+	padding: 2px;
+	background-color: #ffffe1;
+	display: inline-block;
+	white-space: nowrap;
+	color: #000;
+}
+
+.user .ui-button-text{
+	text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+	-webkit-font-smoothing: antialiased
+}
+

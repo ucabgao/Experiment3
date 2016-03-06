@@ -1,0 +1,216 @@
+// Pull in Bootstrap and override with our customizations as required
+
+@import "../../bower_components/bootstrap/less/bootstrap.less";
+@import "./mixins.less";
+@import "./variables.less";
+@import (less) "../vendor/slider/css/slider.css";
+
+body {
+	padding-top: 50px;
+}
+
+// Used in index.jade
+.jumbotron.banner {
+	background-image: url(../img/ice_montage_1900_satellite_duo.jpg);
+	background-repeat: no-repeat;
+	min-height: 350px;
+	position: relative; 
+	padding: 15px 0 0 15px;
+	font-size: 21px;
+	font-weight: 200;
+	color: @reverse-text-color;
+	margin: 0;
+	max-width: 100%;
+
+	h1 {
+		color: @reverse-text-color;
+		line-height: .8;
+		font-size: 2.4em;
+	}
+
+	p {
+		color: @reverse-text-color;
+	}
+
+	small {
+	color: #FFF6e5;
+	font-size: 50%;
+	margin: 0;
+	line-height: 1;
+	}
+
+	.container {
+	max-width: 100%;
+	margin: 0 0 0 140px;
+	padding-left: 0px;
+	height: 325px;
+	}
+}
+
+.well.well-small {
+	margin: 10px;
+	
+	img {
+		float: right;
+		margin: 0 0 0 15px;
+	}
+	p {
+		font-size: 85%;
+		margin: 5px 10px 0 10px;
+		color: gray;
+	}
+}
+
+.thumbnail > img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	margin: 0;
+	border-radius: 4px;
+
+	p {
+	color: @reverse-text-color;
+	line-height: 1.2;
+	margin: 5px 0 10px 0;
+	}
+
+	h3 {
+	color: @reverse-text-color;
+	margin: 0;
+	}
+}
+
+// Used in about.jade
+.about .panel {
+	width: 40ex;
+	margin: 1em 0 1em 1em;
+}
+
+#ice-carousel {
+	margin: 4em 0 1em 2em;
+}
+
+p.well {
+	margin: 0 10px;
+}
+
+p.caption {
+	color: gray;
+	font-size: 90%;
+	font-style: italic;
+}
+
+.panel.panel-primary.pull-right {
+	width: 280px;
+	box-shadow: 5px 5px 5px silver;
+}
+
+.panel img {
+	margin-top: 10px;
+}
+
+blockquote {
+	padding: 10px 20px;
+	margin: 0 0 20px;
+	border-left: 5px solid #7ecefd;
+
+	p {
+	font-size: 15.5px;
+	font-weight: 300;
+	line-height: 1.25;
+	color: #6db3db;
+	}
+
+	p:last-child {
+	margin-bottom: 0;
+	}
+}
+
+// Used in glossary.jade
+#ice-carousel.carousel.slide.pull-right {
+	margin-top: 0;
+	width: 400px;
+	box-shadow: 5px 5px 5px silver;
+}
+.panel.panel-info.pull-right {
+        width: 350px;
+        margin-left: 40px;
+        clear: right;
+	box-shadow: 5px 5px 5px silver;
+	border: 3px solid #7ECEFD;
+
+	p {
+		font-size: 120%;
+	}
+
+	h4.panel-title {
+		font-weight: bold;
+	}
+}
+
+.carousel-caption {
+	background-color: #3E454C;
+	padding: 0 55px 20px 55px;
+	margin: 0 -50px 0 -50px;
+  	opacity: 0.7;
+  	filter:alpha(opacity=70); // For IE8 and earlier 
+
+	p {
+		font-size: 90%;
+	}
+}
+
+// Styles in the main app
+#applicationWrapper {
+
+	#mapWrapper {
+		position: relative;
+	}
+
+	#legend {
+		position: absolute;
+		bottom: 5px;
+		left: 5px;
+		z-index: 1000;
+	}
+
+	// Used in sidebar
+	.affix {
+		position: fixed;
+		top: 80px;
+	}
+
+	.affix-top {
+		position: fixed;
+		top: 60px;
+	}
+
+	#concentrationGraphControls, #thresholdGraphicControls {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+}
+
+#thresholdTarget {
+	margin-top: 1em;
+}
+
+.chart {
+	
+	path, line {
+		fill: none;
+		stroke: #333333;
+		color: #333333;
+		shape-rendering: crispEdges;
+	}
+
+	.bar {
+		fill: #9cc5de;
+	}
+
+	.bar-running {
+		fill: #9cc5de;
+	}	
+}

@@ -1,0 +1,71 @@
+!!! 5
+html
+	head
+		title= title
+
+		link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700')
+		link(rel='stylesheet', href='/css/style.css')
+		link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700", rel="stylesheet", type="text/css")
+		script(src='http://localhost:35729/livereload.js')
+		meta(charset='UTF-8')
+		meta(content='width=device-width, initial-scale=1.0', name='viewport')
+
+		//if lt IE 9
+			script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+
+	body
+
+		// start nav, responsive and degrades nicely for smaller devices
+		header.navbar.navbar-default.navbar-fixed-top(role='banner')
+			
+			.container
+
+				// Brand and toggle get grouped for better mobile display
+				.navbar-header
+					button.navbar-toggle(data-target='.navbar-bs-collapse', data-toggle='collapse', type='button')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='/')
+						|Atlas Home
+
+				// Collect the nav links, forms, and other content for toggling
+				nav.collapse.navbar-collapse.navbar-bs-collapse(role='navigation')
+					- var activeClass
+					ul.nav.navbar-nav
+						- activeClass = ('explore' === active) ? 'active' : ''
+						li(class=activeClass)
+							a(href='/explore') Explore
+						- activeClass = ('about' === active) ? 'active' : ''
+						li(class=activeClass)
+							a(href='/about') About
+						- activeClass = ('download' === active) ? 'active' : ''
+						li(class=activeClass)
+							a(href='/download') Download
+						- activeClass = ('glossary' === active) ? 'active' : ''
+						li(class=activeClass)
+							a(href='/glossary') Glossary
+
+		block content
+		.well.well-small
+			img(src="img/branding.png",alt="branding")
+			p
+				strong Partners and funding.&nbsp;
+				| This project is funded by the National Oceanic and Atmospheric Administration
+				| (NOAA) through 
+				a(href="http://www.aoos.org/") Alaska Ocean Observing System&nbsp;
+				| (AOOS) grant &num;NA11NOS0120020. 
+				| Work was performed by the&nbsp;
+				a(href="http://accap.uaf.edu") Alaska Center for Climate Assessment and Policy&nbsp;
+				| (ACCAP) at the University of Alaska Fairbanks (UAF) in partnership with the&nbsp;
+				a(href="http://www.snap.uaf.edu") Scenarios Network for Alaska and Arctic Planning&nbsp;
+				| (SNAP, UAF) and the University of Illinois, Urbana-Champaign.
+				| Copyright &copy; 2013 ACCAP and SNAP, research institutes of the University of Alaska
+				| Fairbanks. UAF is an affirmative action/equal opportunity employer
+				| and educational institution.&nbsp;&nbsp;&nbsp;
+				a(href="/disclaimer") Disclaimer&nbsp;
+				| and&nbsp;
+				a(href="/credits") Credits
+
+		script(src='/js/client.js')

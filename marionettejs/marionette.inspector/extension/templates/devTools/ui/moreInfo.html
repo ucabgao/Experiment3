@@ -1,0 +1,213 @@
+<div class="sidebar-pane-stack flex-auto visible">
+
+  <div class="sidebar-pane-title expanded" tabindex="0">
+    View
+  </div>
+  <div class="sidebar-pane visible">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="" class="properties properties-tree monospace">
+          {{#each info}}
+          <li data-property-name="{{name}}">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined"> {{value}} </span>
+          </li>
+          {{/each}}
+          <li data-property-name="el" data-dom-element>
+            <span class="name">$el</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined clickable-property" patchedMarionette> [{{{el}}}] </span>
+          </li>
+          <li data-property-name="el" data-dom-element>
+            <span class="name">el</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined clickable-property" patchedMarionette> {{{el}}} </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sidebar-pane-title" tabindex="0">
+    Options
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="options" class="properties properties-tree monospace">
+          {{#each options}}
+            {{> templates/devTools/partials/_property.html this}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  {{#if showUI}}
+  <div class="sidebar-pane-title" tabindex="1">
+    UI
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="ui" class="properties properties-tree monospace">
+          {{#each ui}}
+          <li data-property-name="{{name}}" data-dom-element>
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined clickable-property" patchedMarionette>
+              {{{value}}}
+            </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if triggers}}
+  <div class="sidebar-pane-title" tabindex="2">
+    Triggers
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="" class="properties properties-tree monospace">
+          {{#each triggers}}
+          <li data-event="{{handler}}">
+            <span class="name">{{eventName}}</span>
+            <span class="separator">: </span>
+            <span data-property-name={{handler}} class="value console-formatted-undefined clickable-property" patchedMarionette>{{eventHandler}}</span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if }}
+
+  {{#if events}}
+  <div class="sidebar-pane-title" tabindex="2">
+    Events
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="" class="properties properties-tree monospace">
+          {{#each events}}
+          <li data-event="{{handler}}">
+            <span class="name">{{event}}</span>
+            <span class="separator">: </span>
+            <span data-property-name={{handler}} class="value console-formatted-undefined clickable-property" patchedMarionette>{{handler}}</span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if }}
+
+  {{#if listeners}}
+  <div class="sidebar-pane-title" tabindex="0">
+    Listeners
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="_events" class="properties properties-tree monospace">
+          {{#each listeners}}
+          <li
+            data-property-index="{{@index}}"
+            data-property-context-type="{{context.type}}"
+            data-property-context-cid="{{context.cid}}"
+            data-property-callback-key="{{callback.key}}">
+            <span class="name">{{eventName}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined">
+              <span data-property-value-context class="clickable-property"> {{context.inspect}}</span>
+              <span
+                data-property-listener-callback
+                data-callback-path={{path}}
+                class="clickable-property"> {{name}} </span>
+            </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if model}}
+  <div class="sidebar-pane-title" tabindex="3">
+    Model
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section">
+        <ol class="properties properties-tree monospace">
+          {{#each model}}
+          <li title="">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined" patchedMarionette>{{value}}</span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if }}
+
+  {{#if activity}}
+  <div class="sidebar-pane-title" tabindex="2">
+    Activity
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section ">
+        <ol data-property-key="" class="properties properties-tree monospace">
+          {{#each activity}}
+          <li data-event="{{handler}}">
+            <span class="name">{{event}}</span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if }}
+
+  {{#if warnings.showWarnings}}
+  <div class="sidebar-pane-title" tabindex="2">
+    Warnings
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section ">
+        <ol data-property-key="" class="properties properties-tree monospace">
+          {{#if warnings.wasAggressivelyRendered}}
+          <li data-event="{{handler}}">
+            <span class="name">Rendered Aggressively</span>
+          </li>
+          {{/if}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/if }}
+
+ {{#each ancestors}}
+  <div class="sidebar-pane-title" tabindex="3">
+    {{name}}
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section">
+        <ol data-property-key="{{path}}" class="properties properties-tree monospace">
+          {{#each properties}}
+            {{> templates/devTools/partials/_property.html this}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/each }}
+</div>

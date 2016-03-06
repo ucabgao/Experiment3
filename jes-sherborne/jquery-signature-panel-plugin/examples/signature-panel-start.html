@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignaturePanel - Getting Started</title>
+    <!--[if lt IE 9]><script type="text/javascript" src="../external/excanvas.compiled.js"></script><![endif]-->
+    <script type="text/javascript" src="../external/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../jquery.signature-panel.js"></script>
+    <link rel="stylesheet" type="text/css" href="../jquery.signature-panel.css" />
+
+    <script type="text/javascript">
+        
+        function signatureOK(signatureData) {
+            // Show the user the signature they've entered.
+            $("#my-target").signaturePanel("drawClickstreamToCanvas", signatureData);
+            $("#my-replay-target").signaturePanel("animateClickstreamToCanvas", signatureData);
+            $("#my-panel").signaturePanel("clear");
+        }
+
+        function signatureCancel() {
+            alert("The user clicked Cancel.");
+        }
+
+        $(document).ready(function() {
+            $("#my-panel").signaturePanel({
+                okCallback: signatureOK,
+                cancelCallback: signatureCancel
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <h1>Sign your name below</h1>
+    <div id="my-panel" style="width: 500px; height: 300px; border: 10px solid gray"></div>
+    <h2>Here's what you signed</h2>
+    <canvas id="my-target" height="100" width="250" style="border: 1px solid gray;" ></canvas>
+    <h2>Here's a replay of your signature</h2>
+    <canvas id="my-replay-target" height="100" width="250" style="border: 1px solid gray;" ></canvas>
+</body>
+</html>

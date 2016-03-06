@@ -1,0 +1,58 @@
+{
+  "name": "validatorjs",
+  "description": "Validation library inspired by Laravel's Validator",
+  "version": "2.0.2",
+  "author": "David <dtang859@gmail.com>",
+  "contributors": [
+    {
+      "name": "Gary Green",
+      "email": "holegary@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "main": "./src/validator.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skaterdav85/validatorjs"
+  },
+  "bugs": {
+    "url": "https://github.com/skaterdav85/validatorjs/issues?labels=bug&milestone=1&page=1&state=open"
+  },
+  "keywords": [
+    "validatorjs",
+    "validator.js",
+    "data validation",
+    "validator",
+    "validate",
+    "validation",
+    "data",
+    "laravel",
+    "laravel-validator-for-js"
+  ],
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "chai": "~3.0.0",
+    "grunt": "0.4.5",
+    "grunt-browserify": "^3.8.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-uglify": "0.9.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "jit-grunt": "^0.9.1",
+    "karma": "~0.12.17",
+    "karma-browserify": "^4.2.1",
+    "karma-chai": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.4",
+    "karma-coverage": "~0.2.4",
+    "karma-growl-notifications-reporter": "0.0.2",
+    "karma-mocha": "~0.1.10",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "mocha": "~2.2.5"
+  },
+  "scripts": {
+    "test-node": "node node_modules/mocha/bin/mocha spec",
+    "test-browser": "grunt dist && node node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+    "test": "npm run test-node && npm run test-browser"
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"port": 3000,
+	"database": {
+		"user":"sea_ice_atlas_user",
+		"password":"example",
+		"database":"sea_ice_atlas",
+		"host":"localhost",
+		"port":30303
+	}
+}

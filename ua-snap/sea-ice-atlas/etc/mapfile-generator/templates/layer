@@ -1,0 +1,31 @@
+
+
+	 LAYER
+                NAME [% layerName %]
+                TYPE raster
+                STATUS ON
+
+                DATA "/var/www/html/seaice-reprojected-weekly/[% layerName %].tif"
+                OFFSITE 0 0 0
+
+                PROJECTION
+                        "init=epsg:3338"
+                END
+
+                CLASS
+                        NAME "0-30%"
+                        EXPRESSION ([pixel] >= 0 AND [pixel] < 30)
+                        COLOR 49 130 189
+                END
+                CLASS
+                        NAME "30-90%"
+                        EXPRESSION ([pixel] >= 30 AND [pixel] < 90)
+                        COLOR 158 202 225
+                END
+                CLASS
+                        NAME "90-100%"
+                        EXPRESSION ([pixel] >= 90)
+                        COLOR 222 235 247
+                END
+        END
+

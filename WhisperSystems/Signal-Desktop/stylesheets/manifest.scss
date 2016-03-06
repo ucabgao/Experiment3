@@ -1,0 +1,17 @@
+// Signal for the Browser
+// A universally compatible extension
+// Below is the ship's manifest
+
+// Global Settings, Variables, and Mixins
+  @import 'variables';
+  @import 'global';
+
+// Build the main view
+  @import 'index';
+  @import 'conversation';
+
+// Not sure where something goes, or
+// implementing a known CSS hack? Add it
+// to `shame.scss`, and it will be fixed!
+
+  @import 'shame';

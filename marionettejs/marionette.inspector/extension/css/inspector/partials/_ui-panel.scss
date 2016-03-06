@@ -1,0 +1,10 @@
+.ui-tool {
+  .tree-group-item {
+    &:hover {
+      .right-button {
+        display: block;
+      }
+    }
+  }
+}
+

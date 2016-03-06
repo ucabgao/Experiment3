@@ -1,0 +1,50 @@
+{
+  "extName": {
+    "message": "Chrome Page Style",
+    "description": "Extension name."
+  },
+  "extDescription": {
+    "message": "Page Style for Chrome",
+    "description": "Extension description."
+  },
+  "titleHasStyles": {
+    "message": "Click to select a style",
+    "description": "Title of the page action."
+  },
+  "titleNoStyles": {
+    "message": "Page style not found",
+    "description": "Title of the page action."
+  },
+  "styleDefault": {
+    "message": "Default Style",
+    "description": "Note that specifies a style is 'preferred'."
+  },
+  "titleSettings": {
+    "message": "Chrome Page Style Settings",
+    "description": "Title of the options page."
+  },
+  "buttonSave": {
+    "message": "Save Settings",
+    "description": "Text of the 'save' button."
+  },
+  "menuNoStyles": {
+    "message": "No Style",
+    "description": "Text of the 'No Style' menu."
+  },
+  "labelAlwaysShowIcon": {
+    "message": "Always show page action icon even page styles not found",
+    "description": "Label text of option 'alwaysShowIcon'."
+  },
+  "labelRememberSelected": {
+    "message": "Use cookies to remember the selected page style",
+    "description": "Label text of option 'rememberSelected'."
+  },
+  "textNoStylesFound": {
+    "message": "No styles found",
+    "description": "Text shown on popup if no page styles found."
+  },
+  "messageSettingsSaved": {
+    "message": "Settings Saved",
+    "description": "Message shown on a javascript alert that tells the user all settings are saved."
+  }
+}

@@ -1,0 +1,125 @@
+<div class="sidebar-pane-stack flex-auto visible">
+
+  <div class="sidebar-pane-title expanded" tabindex="0">
+    Model
+  </div>
+  <div class="sidebar-pane visible">
+    <div class="body">
+      <div class="section expanded">
+        <ol data-property-key="" class="properties properties-tree monospace">
+          {{#each info}}
+            {{> templates/devTools/partials/_property.html this}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+ {{#if listeners}}
+ <div class="sidebar-pane-title" tabindex="0">
+   Listeners
+ </div>
+ <div class="sidebar-pane">
+   <div class="body">
+     <div class="section">
+       <ol data-property-key="_events" class="properties properties-tree monospace">
+         {{#each listeners}}
+         <li
+           data-property-index="{{@index}}"
+           data-property-context-type="{{context.type}}"
+           data-property-context-cid="{{context.cid}}"
+           data-property-callback-key="{{callback.key}}">
+           <span class="name">{{eventName}}</span><span class="separator">: </span>
+           <span class="value console-formatted-undefined">
+             <span data-property-value-context class="clickable-property"> {{context.inspect}}</span>
+             <span
+               data-property-listener-callback
+               data-callback-path={{path}}
+               class="clickable-property"> {{name}} </span>
+           </span>
+         </li>
+         {{/each}}
+       </ol>
+     </div>
+   </div>
+ </div>
+ {{/if}}
+
+  <div class="sidebar-pane-title" tabindex="0">
+    Attributes
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section">
+        <ol class="properties properties-tree monospace">
+          {{#each attributes.serialized}}
+          <li title="" style="">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined"> {{value}} </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+ {{#unless changed.isEmpty}}
+  <div class="sidebar-pane-title" tabindex="0">
+    Changed
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section">
+        <ol class="properties properties-tree monospace">
+          {{#each changed.serialized}}
+          <li title="" style="">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined"> {{value}} </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/unless}}
+
+ {{#unless _previousAttributes.isEmpty}}
+  <div class="sidebar-pane-title" tabindex="0">
+    Previous Attributes
+  </div>
+  <div class="sidebar-pane">
+    <div class="body">
+      <div class="section">
+        <ol class="properties properties-tree monospace">
+          {{#each _previousAttributes.serialized}}
+          <li title="" style="">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined"> {{value}} </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+  {{/unless}}
+
+
+  {{#each ancestors}}
+   <div class="sidebar-pane-title" tabindex="3">
+     {{name}}
+   </div>
+   <div class="sidebar-pane">
+     <div class="body">
+       <div class="section">
+         <ol data-property-key="{{path}}" class="properties properties-tree monospace">
+           {{#each properties}}
+             {{> templates/devTools/partials/_property.html this}}
+           {{/each}}
+         </ol>
+       </div>
+     </div>
+   </div>
+   {{/each }}
+
+</div>

@@ -1,0 +1,10 @@
+/*
+ * Injected into the inspected window by the agent
+ * these styles will be added to the page.
+*/
+
+.marionette-inspector-highlighted-element {
+  position: absolute;
+  background: rgba(55, 161, 243, 0.48);
+  -webkit-filter: grayscale(20%);
+}

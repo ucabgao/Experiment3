@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+      <title>kino.</title>
+      <link rel="stylesheet" href="css/kino.css">
+    </head>
+    <body>
+        <a href="https://github.com/BrandonKowalski/kino"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+        <div class="container">
+            <div class="kino-wrapper">
+                <h1>kino.</h1>
+                <p>vines + vines + vines + vines. did we mention vines?</p>
+                <div class="kino-video-deck">
+                    <h3 id="meta"></h3>
+                    <video id="kino-video" autoplay="autoplay">
+                        <source src="https://v.cdn.vine.co/r/videos/F439686684969069953313562624_1773002b3d0.3_7uY6K2Zt6bmyVhKZOxjO9hcPeecEJR3gfhRv0gdnD_q468OqwXjDaVp2Wm4wY6x_.mp4?versionId=oFsXgFobV7dFljGqZGSfyB2IN8WMPuBL" type="video/mp4" />
+                    </video>
+                </div> <!-- kino-video-deck -->
+                <hr>
+                <button id="make-button" type="button" onclick="showBuilder()">make a kino</button>
+                <div class="builder-wrapper">
+                    <h1>Build a kino.</h1>
+                    <input type="text" id="title" placeholder="kino title" /> |
+                    <input type="text" id="author" placeholder="author" /> <br><br>
+                    <input type="text" id="vine" placeholder="vine video url" />
+                    <button type="button" onclick="addToQueue()">+</button>
+                    <hr>
+                    <button type="button" id="build-button" onclick="build()">build kino.</button>
+                    <div class="kino-url-wrapper">
+                        kino url: <input type="text" id="kinoURL" />
+                    </div>
+                </div>
+            </div> <!-- kino-wraooer -->
+            <div class="footer">
+                made with &lt;3 by <a href="http://github.com/BrandonKowalski" target="_new">Brandon.</a> open source, tweak it &amp; break it!
+            </div>
+        </div><!-- container -->
+      <script src="js/zepto.min.js" type="text/javascript"></script>
+      <script src="js/app.js" type="text/javascript"></script>
+    </body>
+</html>

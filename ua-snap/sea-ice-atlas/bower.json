@@ -1,0 +1,29 @@
+{
+  "name": "sea-ice-atlas",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ua-snap/sea-ice-atlas",
+  "authors": [
+    "Bruce Crevensten <bruce.crevensten@gmail.com>"
+  ],
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.0.0",
+    "backbone": "~1.0.0",
+    "underscore": "~1.5.2",
+    "q": "~0.9.7",
+    "openlayers": "~2.13.1",
+    "momentjs": "~2.2.1",
+    "highcharts": "~3.0.5",
+    "proj4": "~1.4.1",
+    "jquery.scrollTo": "~1.4.6",
+    "d3": "~3.3.8"
+  }
+}

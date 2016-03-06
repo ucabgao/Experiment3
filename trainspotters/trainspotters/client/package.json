@@ -1,0 +1,66 @@
+{
+  "name": "trainspotters-client",
+  "version": "0.0.0",
+  "description": "Trainspotter client webapp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node devServer.js",
+    "build": "NODE_ENV=production webpack --progress --profile --colors",
+    "dev": "NODE_ENV=development npm start",
+    "dev:open": "concurrent 'npm run open' 'npm run dev'",
+    "open": "sleep 3 && open http://localhost:3000",
+    "serve": "statik -p 3000 dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trainspotters/trainspotters.git"
+  },
+  "keywords": [
+    "trainspotters",
+    "tfl",
+    "london"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "leaflet": "^0.7.7",
+    "moment": "^2.10.6",
+    "moment-duration-format": "^1.3.0",
+    "numeral": "^1.5.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-leaflet": "^0.9.0",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0",
+    "trainspotters-parser": "file:../parser",
+    "whatwg-fetch": "^0.10.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-object-assign": "^1.2.1",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "clean-webpack-plugin": "^0.1.3",
+    "concurrently": "^1.0.0",
+    "connect-history-api-fallback": "^1.1.0",
+    "css-loader": "^0.23.0",
+    "cssnext-loader": "^1.0.1",
+    "es5-shim": "^4.1.13",
+    "es6-promise": "^3.0.2",
+    "exports-loader": "^0.6.2",
+    "express": "^4.13.3",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.1",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "statik": "^1.4.6",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.9.11",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.2.1"
+  }
+}

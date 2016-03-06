@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Marionette SpecRunner</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../node_modules/mocha/mocha.css" />
+
+    <script src="../../../../node_modules/mocha/mocha.js"></script>
+    <script src="../../../../node_modules/chai/chai.js"></script>
+    <script src="../../../../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../../../../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <script src="../../../../node_modules/chai-jq/chai-jq.js"></script>
+
+    <script src="../../lib/jquery/jquery.js"></script>
+    <script src="../../lib/underscore/underscore.js"></script>
+    <script src="../../test/libs/backbone.js"></script>
+    <script src="../../test/libs/marionette.js"></script>
+    <script src="../../agent/build/src/core.js"></script>
+
+
+    <script src="agent_test_setup.js"></script>
+
+
+<!--
+    <script>
+        window.Marionette = Backbone.Marionette = {};
+        window.slice = Array.prototype.slice;
+        Marionette.Deferred = Backbone.$.Deferred;
+    </script>
+     -->
+    <script src="agent/marionette/app-observer.spec.js"></script>
+    <script src="agent/marionette/serialize/serializeView.spec.js"></script>
+    <script src="agent/marionette/serialize/serializeModel.spec.js"></script>
+    <script src="agent/utils/inspectValue.spec.js"></script>
+    <script src="agent/utils/lazyWorker.spec.js"></script>
+    <script src="agent/utils/serializeObject.spec.js"></script>
+    <script src="agent/patches/patchDefineCallback.spec.js"></script>
+    <script src="agent/patches/patchMarionetteApplication.spec.js"></script>
+    <script src="agent/creating-a-model.spec.js"></script>
+
+
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="fixtures" hidden></div>
+  </body>
+</html>

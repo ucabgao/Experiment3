@@ -1,0 +1,15 @@
+engines:
+  eslint:
+    enabled: true
+
+# http://docs.codeclimate.com/article/289-configuring-your-repository-via-codeclimate-yml#platform
+
+ratings:
+  paths:
+  - "**/**.*"
+
+exclude_paths:
+  - "LICENSE"
+  - "README.md"
+  - "package.json"
+  - "ember-addon-main.js"

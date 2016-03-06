@@ -1,0 +1,64 @@
+.app-header {
+
+
+  //
+  //  Override the Bootstrap responsive nav
+  // --------------------------------------------
+  &.navbar {
+    height:30px;
+    min-height: 30px;
+    margin-bottom: 0px;
+  }
+
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-nav {
+    float: left;
+    margin: 0;
+
+    > li {
+      float: left;
+    }
+
+    > li > a {
+      padding-bottom: 5px;
+      padding-top: 5px;
+      font-size: 13px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .mag {
+      padding-top:4px;
+      width:25px;
+      margin-right: 10px;
+    }
+
+    .back-forward {
+      font-size: 13px;
+      padding-bottom: 5px;
+      padding-top: 7px;
+      padding-left: 8px;
+      color: #747474;
+
+      &:hover {
+        color: #545454;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .navbar-brand {
+    height:30px;
+    padding-top: 2px;
+    margin-right: 5px;
+    padding-right: 0px;
+
+    img {
+      height: 15px;
+      width: 12px;
+    }
+  }
+}

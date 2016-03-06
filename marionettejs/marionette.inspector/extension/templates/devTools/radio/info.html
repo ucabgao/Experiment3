@@ -1,0 +1,103 @@
+<div class="sidebar-pane-stack flex-auto visible">
+
+  <div class="sidebar-pane-title expanded" tabindex="0">
+    Events
+  </div>
+  <div class="sidebar-pane visible">
+    <div class="body">
+      <div class="section expanded">
+        <ol class="properties properties-tree monospace">
+          {{#each events}}{{#each this}}
+          <li
+            data-property-context-type="{{context.type}}"
+            data-property-context-cid="{{context.cid}}"
+            data-property-callback-key="{{callback.key}}">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined">
+              <span data-property-value-context  class="clickable-property">
+                {{context.inspect}}
+              </span>
+
+              <span data-property-value-callback class="clickable-property">
+                {{#if callback.key}}
+                  {{callback.key}}
+                {{else}}
+                  {{callback.inspect}}
+                {{/if}}
+              </span>
+            </span>
+          </li>
+          {{/each}}{{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-pane-title expanded" tabindex="0">
+    Commands
+  </div>
+  <div class="sidebar-pane visible">
+    <div class="body">
+      <div class="section expanded">
+        <ol class="properties properties-tree monospace">
+          {{#each commands}}
+          <li
+            data-property-context-type="{{context.type}}"
+            data-property-context-cid="{{context.cid}}"
+            data-property-callback-key="{{callback.key}}">
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined">
+              <span data-property-value-context class="clickable-property">
+                {{context.inspect}}
+              </span>
+
+              <span data-property-value-callback class="clickable-property">
+                {{#if callback.key}}
+                  {{callback.key}}
+                {{else}}
+                  {{callback.inspect}}
+                {{/if}}
+              </span>
+            </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-pane-title expanded" tabindex="0">
+    Requests
+  </div>
+  <div class="sidebar-pane visible">
+    <div class="body">
+      <div class="section expanded">
+        <ol class="properties properties-tree monospace">
+          {{#each requests}}
+          <li
+            data-property-context-type="{{context.type}}"
+            data-property-context-cid="{{context.cid}}"
+            data-property-callback-key="{{callback.key}}">
+
+            <span class="name">{{name}}</span><span class="separator">: </span>
+            <span class="value console-formatted-undefined">
+              <span data-property-value-context class="clickable-property">
+                {{context.inspect}}
+              </span>
+
+              <span data-property-value-callback class="clickable-property">
+                {{#if callback.key}}
+                  {{callback.key}}
+                {{else}}
+                  {{callback.inspect}}
+                {{/if}}
+              </span>
+            </span>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>

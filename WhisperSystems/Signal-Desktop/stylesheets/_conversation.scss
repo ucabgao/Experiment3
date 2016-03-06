@@ -1,0 +1,575 @@
+.conversation {
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+
+  .panel {
+    height: 100%;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+  }
+}
+.conversation-title {
+  display: block;
+  line-height: $header-height;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 10px;
+  -webkit-user-select: text;
+}
+.conversation-number {
+  padding-left: 5px;
+  line-height: 1em;
+  font-size: small;
+  color: #999;
+}
+
+.conversation {
+  height: calc(100% - 20px);
+  border-radius: 10px;
+
+  .discussion-container {
+    height: calc(100% - 2 * #{$header-height} - 60px);
+  }
+}
+
+.group-member-list,
+.new-group-update,
+.message-list, .message-detail, .key-verification {
+  height: 100%;
+}
+
+.key-verification {
+  background: white;
+
+  p {
+    padding: 1em;
+  }
+  .key {
+    font-family: monospace;
+    padding: 0 1em;
+  }
+}
+
+.message-detail {
+  .container {
+    height: calc(100% - (#{$header-height} + 4px));
+  }
+
+  .message-container {
+    background: white;
+    padding: 1em 0;
+
+    .sender {
+      display: none;
+    }
+  }
+
+  .info {
+    padding: 1em;
+
+    .label {
+      font-weight: bold;
+      padding-right: 1em;
+      vertical-align: top;
+    }
+
+    button {
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 0.5em;
+      font-weight: bold;
+      background: $blue;
+
+      span {
+        vertical-align: middle;
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 18px;
+        height: 18px;
+        background: url('/images/refresh.png') no-repeat center center;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .contact-detail {
+    margin-bottom: 5px;
+    padding: 0 36px;
+  }
+
+  h3 {
+    font-size: 1em;
+    padding: 5px;
+
+    button {
+      float: right;
+    }
+  }
+
+  .error-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url('/images/error_red.png') no-repeat center center;
+    vertical-align: middle;
+    position: relative;
+    margin: 9px;
+    float: right;
+
+    .error-message {
+      display: none;
+      position: absolute;
+      background: black;
+      color: white;
+      border-radius: 10px;
+      padding: 0.5em;
+      font-weight: normal;
+      bottom: calc(100% + 16px);
+      left: 50%;
+      margin-left: -130px;
+      width: 180px;
+      z-index: 10;
+
+      &:before {
+        left: -10px;
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -23px;
+        left: calc(50% - 6px + 40px);
+        border: 6px solid transparent;
+        border-top: 18px solid #000000;
+      }
+    }
+
+    &:hover .error-message { display: block; }
+  }
+
+  button.conflict {
+    float: right;
+    background: #d00;
+
+    span {
+      padding-left: 5px;
+    }
+
+    &:before {
+      background: url('/images/error.png') no-repeat center center;
+    }
+  }
+}
+
+.group-update {
+  font-size: smaller;
+}
+
+.group-member-list {
+  .container {
+    height: calc(100% - #{$header-height});
+  }
+ }
+
+.new-group-update {
+  .container { height: calc(100% - #{$header-height} - 85px); }
+}
+
+.private .entry .avatar,
+.private .sender,
+.outgoing .sender {
+  display: none;
+}
+
+.sender {
+  font-size: smaller;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.timestamp {
+  font-size: smaller;
+  margin-right: 3px;
+}
+
+.outgoing.entry {
+  .status {
+    display: inline-block;
+    width: 18px;
+    height: 1em;
+  }
+  &.sent .status {
+    background: url('/images/check-white.png');
+  }
+  &.delivered .status {
+    background: url('/images/double-check-white.png');
+  }
+  &.pending .status {
+    background: none;
+    &:before { content: '...'; }
+  }
+}
+
+.message-list {
+  position: relative;
+  margin: 0;
+  padding: 2em 0 0;
+  overflow-y: auto;
+
+  &:before {
+    display: block;
+    margin: -25px auto 10px;
+    content: " ";
+    height: $loading-height;
+    width: $loading-height;
+    border: solid 3px transparent;
+  }
+
+  .timestamp {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.message-detail,
+.message-list {
+  list-style: none;
+
+
+  li {
+    max-width: 800px;
+    margin: 0 8px 16px;
+
+    &::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  }
+
+  .bubble {
+    position: relative;
+    left: -2px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 9px 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px -4px black;
+    word-wrap: break-word;
+    margin-left: 8px;
+    max-width: 30em;
+
+    @media(max-width:900px) {
+      max-width: calc(100% - 45px); // avatar size + padding
+    }
+
+    .content {
+      -webkit-user-select: text;
+      white-space: pre-wrap;
+
+      a {
+        word-break: break-all
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+    .meta {
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
+
+  .outgoing.sent .bubble {
+  }
+
+  .error.bubble {
+    cursor: pointer;
+    background: url('/images/error_red.png') no-repeat;
+  }
+  .incoming .error.bubble {
+    padding-right: 40px;
+    background-position: calc(100% - 12px) 9px;
+  }
+  .outgoing .error.bubble {
+    padding-left: 40px;
+    background-position: 12px 9px;
+  }
+
+  .incoming {
+    .avatar, .bubble {
+      float: left;
+    }
+    .bubble {
+      color: $grey_d;
+      background-color: $grey_l;
+
+      &::before {
+        left: -10px;
+        border-right: 10px solid white;
+      }
+
+      &::after {
+        left: -8px;
+        border-right: 8px solid $grey_l;
+      }
+    }
+  }
+
+  .outgoing {
+
+    .avatar, .bubble {
+      float: right;
+    }
+
+    .bubble {
+      clear: left;
+      color: white;
+      background-color: $blue;
+
+      .meta {
+        color: white;
+      }
+
+      &::before {
+        right: -10px;
+        border-left: 10px solid white;
+      }
+
+      &::after {
+        right: -8px;
+        border-left: 8px solid $blue;
+      }
+
+      .content {
+        a {
+          color: $grey_l;
+        }
+
+        &::selection, a::selection {
+          color: $grey_d;
+          background: white;
+        }
+
+        &::-moz-selection, a::-moz-selection {
+          color: $grey_d;
+          background: white;
+        }
+      }
+    }
+  }
+
+  .control {
+    .bubble {
+      .content {
+        font-style: italic;
+      }
+
+      &::before, &::after {
+        display: none;
+      }
+    }
+  }
+
+  .attachments {
+    img, audio, video {
+      max-width: 100%;
+      max-height: 300px;
+    }
+
+    video {
+      background: black;
+      min-height: 300px;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .outgoing .avatar {
+    display: none;
+  }
+
+  .avatar {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+  }
+
+  .meta {
+    margin-top: 3px;
+    float: right;
+  }
+
+  .end-session {
+    font: small;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .bubble .error-message {
+    font-style: italic;
+  }
+
+  .key-conflict {
+    padding: 15px 10px;
+
+    button {
+      margin-top: 5px;
+    }
+  }
+}
+
+.key-conflict-dialogue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: $header-height;
+
+  .content {
+    padding: 1em;
+    background: white;
+    color: black;
+    box-shadow: 0 0 5px 0 black;
+  }
+
+  .verify {
+    color: $blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.bottom-bar {
+  $button-width: 36px;
+  margin-top: 4px;
+  height: 36px;
+  border-top: 1px solid $grey_l;
+  background: white;
+
+  button, input, textarea {
+    color: $grey_d;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: $button-width;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 24px;
+    background: transparent;
+  }
+
+
+  .attachment-previews {
+    padding: 0 36px;
+    .attachment-preview {
+      padding: 13px 10px 0;
+    }
+    img {
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      max-height: 100px;
+    }
+
+    .close {
+      background: #999;
+
+      &:hover {
+        background: $grey;
+      }
+    }
+  }
+  .choose-file {
+    float: left;
+    height: 36px;
+  }
+
+  .send-btn {
+    float: right;
+    height: 36px;
+    width: 36px;
+    border: none;
+    outline: none;
+    background: url('/images/send.png') no-repeat;
+    background-size: 75%;
+    background-position: center center;
+    cursor: pointer;
+
+    &::before {
+      content: '+';
+    }
+  }
+
+  form, input, textarea {
+    height: 100%;
+  }
+
+  .send-message {
+    display: block;
+    width: calc(100% - #{$button-width});
+    min-height: $header-height - 1px;
+    max-height: 100px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    z-index: 5;
+    resize: none;
+    font-size: 1em;
+  }
+}
+
+.toast {
+  position: absolute;
+  bottom: 0;
+  margin: 0 2em 3em;
+  padding: 0.5em 1.5em;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  box-shadow: 0 0 5px 0 black;
+  border-radius: 20px;
+  font-size: small;
+}
+
+.confirmation-dialog {
+  position: absolute;
+  top: $header-height;
+  padding: 1em;
+  background: white;
+  border: solid 2px $blue;
+
+  .message {
+    text-align: center;
+  }
+
+  button {
+    float: right;
+    margin-left: 10px;
+  }
+}
