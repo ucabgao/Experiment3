@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+sivakumar-kailasam/broccoli-leasot,55,6b2f257fb3a97a279877fe238f9562d9d61c6a39,TypeScript,Detectable,"Revise the definitelytyped and construct an annotation whose property is often a union type of string and object, while path.resolve expects string.",587.0
