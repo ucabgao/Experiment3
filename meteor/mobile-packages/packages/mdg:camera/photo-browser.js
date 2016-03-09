@@ -1,4 +1,22 @@
-var stream;
+/* @flow */
+
+class t {
+ active:any;
+ ended:any;
+ id:any;
+ onaddtrack:any;
+ onremovetrack:any;
+ addTrack:any;
+ clone:any;
+ getAudioTracks:any;
+ getTrackById:any;
+ getTracks:any;
+ removeTrack:any;
+ getVideoTracks:any;                                                                    
+}
+
+
+var stream:t;
 var closeAndCallback;
 
 var photo = new ReactiveVar(null);
