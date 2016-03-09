@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+ftsanjuan/jquery-combinate,1,113c2d6ab5b5aaa2b0608c36e61a5edc3fdb782a,Flow,Undetectable,"Syntax error. Missing semi-colons.",22.0
