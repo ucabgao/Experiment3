@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+jetstash/jpop,1,2b3431a86bad85fdebb62fc30df8275b3ae92390,TypeScript,Undetectable,"Spec error. Wrongly handles error case. Instead of erroring, the buggy program should print the error message and continue working.",91.0
