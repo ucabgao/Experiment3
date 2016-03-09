@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+xeonx/shBrushGo,1,aafaa3da918dfe822e8dc9608097f7ae9552cff7,Flow,Undetectable,"String error. The bug was ignoring case sensitivity. The fix changes the string literal value of a parameter to another to enable case sensitive, which is invisible to the two type systems.",45.0
