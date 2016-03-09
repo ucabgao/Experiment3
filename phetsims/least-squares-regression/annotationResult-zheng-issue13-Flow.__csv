@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+phetsims/least-squares-regression,13,41bbee7fadf9c41859b5ce9d0912836045d0ad3f,Flow,Undetectable,"UI error. The fix simply brings two lines to the front, on top of residuals,which avoids residuals' color to unnecessarily changes",77.0
