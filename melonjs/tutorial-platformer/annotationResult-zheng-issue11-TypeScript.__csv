@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+melonjs/tutorial-platformer,11,a9f1b5e9d3439fe270f95b835e0d7f1f8e43484b,TypeScript,Undetectable,"Spec errors. Wrong place of definition.",17.0
