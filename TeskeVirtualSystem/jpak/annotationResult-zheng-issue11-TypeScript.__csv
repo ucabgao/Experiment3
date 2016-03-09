@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+TeskeVirtualSystem/jpak,11,2efaed60e8761328a453ae77ec6b5b6bdf327f34,TypeScript,Undetectable,"Spec error. The implementation itself is not buggy, but the side effect it introduces dynamically breaks some original functionalities in a library. ",104.0
