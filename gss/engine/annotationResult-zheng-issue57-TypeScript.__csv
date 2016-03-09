@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+gss/engine,57,a78f6f5db433d2d0e85d05169a068f26ad9952d6,TypeScript,Undetectable,"Spec error. Embedded CSS grammar.",33.0

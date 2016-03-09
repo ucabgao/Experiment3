@@ -1,3 +1,5 @@
+/* @flow */
+
 /* gss-engine - version 1.0.2-beta (2014-04-15) - http://gridstylesheets.org */
 ;(function(){
 
