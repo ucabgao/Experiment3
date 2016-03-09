@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+DanielRapp/twss.js,13,cfbf7b0c7c1fe6b05812b189d1c90ab3a6c54a2e,TypeScript,Undetectable,"Spec error. Wrong regular expression.",136.0
