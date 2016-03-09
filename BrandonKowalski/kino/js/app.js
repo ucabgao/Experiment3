@@ -1,3 +1,5 @@
+/* @flow */
+
 var buildQueue = [];
 
 var loadSavedKino = function() {

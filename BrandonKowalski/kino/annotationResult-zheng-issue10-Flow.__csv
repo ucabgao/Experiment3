@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+BrandonKowalski/kino,10,9bbb699f3c5ae44f02ecee8c2258026cabf8b03f,Flow,Undetectable,"Spec error. Both val and text function from jquery can take string as a parameter. cannot distinguish between them based on the parameter type. ",240.0
