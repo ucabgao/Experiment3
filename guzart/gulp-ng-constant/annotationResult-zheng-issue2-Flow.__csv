@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+guzart/gulp-ng-constant,2,7d728ffcce6917b5005e7d59287dc1cdb7465a98,Flow,Undetectable,"Wrong predicates. The order of an or expression is wrong which causes a short circuit and is buggy.",58.0
