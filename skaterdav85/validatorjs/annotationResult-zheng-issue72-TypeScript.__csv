@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+skaterdav85/validatorjs,72,376eebd07920540d140d2049094339d12498ba79,TypeScript,Undetectable,"Spec error. The bug is related to mishandling a case when the input is numerical values. Though the predicates of the branches are type related, how to correctly handle them are not.",229.0
