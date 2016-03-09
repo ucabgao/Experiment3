@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+dominictarr/pull-csv,1,2f2f5ab347a751f67342c8356f1a0694c21587c2,Flow,Undetectable,"Missing predicates. Missed to handle double quote escaping, whose grammar is in regex and not visible to these two type systems. ",51.0
