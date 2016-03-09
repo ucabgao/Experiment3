@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+meteor/mobile-packages,98,fa28cc94b52f821c3c76866b5af1cbd3b6ed6ed2,TypeScript,Detectable,"Constructs the annotation of MediaStream (https://developer.mozilla.org/en/docs/Web/API/MediaStream) that does have a stop property.",443.0
