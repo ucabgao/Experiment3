@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+karma-runner/karma-junit-reporter,67,7f0f2425795daf8f28a903ab7155e85d0c9f6de1,TypeScript,Undetectable,"Spec error. Even the output file is specified, the program still used a hardcoded path which causes an error. The content of the path is invisible to both type systems.",88.0
