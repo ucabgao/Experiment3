@@ -1,4 +1,22 @@
-;(function(Agent){
+/* @flow */
+
+;
+
+class t { 
+ItemView:any;
+CollectionView:any;
+CompositeView:any;
+View:any;
+LayoutView:any;
+Application:any;
+Module:any;
+Controller:any;
+VERSION:any;
+Region:any;
+Object:any;
+}
+
+(function(Agent){
 
   var assignClassNames = function(Backbone, Marionette) {
     Marionette.ItemView.prototype._className = 'ItemView';
@@ -19,7 +37,7 @@
 
   Agent.patchMarionette = function() {
 
-    var patchMarionette = function(Backbone, Marionette) {
+    var patchMarionette = function(Backbone, Marionette:t) {
 
       if (Agent.patchedMarionette) {
         debug.log('Backbone was detected again');
