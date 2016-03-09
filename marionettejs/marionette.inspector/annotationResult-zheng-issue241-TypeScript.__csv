@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+marionettejs/marionette.inspector,241,b960e33c3e068012eb495dfac2c0f96344bc40f1,TypeScript,Detectable,"Construct a type that does not have property Behaviour",172.0
