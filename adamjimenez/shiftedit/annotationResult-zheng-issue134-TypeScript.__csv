@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+adamjimenez/shiftedit,134,439de2c5b120b4bba1cf5bba36151e655d441c12,TypeScript,Undetectable,"Spec error. The bug was failing to rename a folder. The fix bypass this error by simply allowing the user to rename a folder when it is created",68.0
