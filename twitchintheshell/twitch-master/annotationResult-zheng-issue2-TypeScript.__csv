@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+twitchintheshell/twitch-master,2,55cdf625adae27b8738b3a8eb1e26b0c6386ea83,TypeScript,Undetectable,"String errors. The fix changes a string literal to anoter which is invisible to these two type systems.",35.0
