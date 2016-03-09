@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+arantius/persona-fusion-calculator,1,c6d1fd0b57dae344c37ee9539c60dbba1b1311ee,Flow,Undetectable,"Spec error. Wrong string value of a field, invisible to two type systems.",44.0
