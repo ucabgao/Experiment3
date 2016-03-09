@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+nelsonomuto/angular-ui-form-validation,33,0eb7b0e915d606d15b7bb9d7959d382608ae3528,TypeScript,Undetectable,"An unnecessary predicate. Unnecessarily checks whether the password confirmation meets password requirements which is necessary only in the first time.",90.0
