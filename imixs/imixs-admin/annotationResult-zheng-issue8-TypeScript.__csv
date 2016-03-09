@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+imixs/imixs-admin,8,89808179ee7f778ef2bf019dd2b957d9c449cad0,TypeScript,Undetectable,"Spec error. Forgot to remove whitespaces of a string from two sides.",50.0
