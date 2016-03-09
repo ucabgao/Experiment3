@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+react-component/tree-select,2,9d83c45cead37b38271265435ec3e068ac764c58,TypeScript,Undetectable,"Spec error. Wrong property name of TreeSelect in HTML logic inside a javascript file, which is invisible to the two type systems.",42.0
