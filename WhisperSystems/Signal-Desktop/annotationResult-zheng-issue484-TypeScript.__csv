@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+WhisperSystems/Signal-Desktop,484,7f60a2d797c3b7b6f50ad3294651a3374e3b5fbc,TypeScript,Undetectable,"Spec errors. Always mark a message sent even if all our network requests failed.",11.0
