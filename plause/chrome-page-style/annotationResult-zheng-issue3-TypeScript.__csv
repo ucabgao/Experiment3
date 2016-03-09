@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+plause/chrome-page-style,3,f4143fb422968fabde6aca5722adb4e84e5d1ff9,TypeScript,Undetectable,"Spec error which causes a UI error. The default style always overwrites selected style, which is incorrect sometimes. ",63.0
