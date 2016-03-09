@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+ua-snap/sea-ice-atlas,90,d444235dcd98548dba5ca5b5d8d5d202d19bf9bf,Flow,Undetectable,"Spec error. Forgot to round some numerical values before using them in URL, resulting in long strings, which requires more fine-grained types to check such an error.",80.0
