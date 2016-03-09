@@ -1,14 +1,26 @@
+/* @flow */
+
 var path = require('path');
 var BroccoliBuilder = require('broccoli').Builder;
 var BroccoliLeasotFilter = require('./lib/index');
 var chalk = require('chalk');
 var forOwnFn = require('lodash/object').forOwn;
 
+class t {
+project:any;
+trees:s;
+options;any;
+}
+
+class s {
+app: string | Object;
+}
+
 module.exports = {
 
 	name: 'broccoli-leasot',
 
-	included: function(app) {
+	included: function(app:t) {
 
 		this._super.included.apply(this, arguments);
 
