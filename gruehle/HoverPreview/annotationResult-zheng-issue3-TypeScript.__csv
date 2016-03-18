@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+gruehle/HoverPreview,3,ea7e8755c59134276b5fe8a885e8e649ce0ff757,TypeScript,Detectable,"TypeScript is able to detect that property 'yBot' does not exist in the buggy program.",124.0
