@@ -1,3 +1,5 @@
+/* @flow */
+
 /*
  * Copyright (c) 2012 Glenn Ruehle
  * 
