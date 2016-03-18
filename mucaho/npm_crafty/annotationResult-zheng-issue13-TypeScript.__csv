@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+mucaho/npm_crafty,13,a7a47ccbeef7d981b9e08c4e7ef73129021ec697,TypeScript,Undetectable,"EIS. Scope error.",78.0
