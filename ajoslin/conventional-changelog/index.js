@@ -1,3 +1,5 @@
+/* @flow */
+
 'use strict';
 var conventionalCommitsParser = require('conventional-commits-parser');
 var conventionalChangelogWriter = require('conventional-changelog-writer');
