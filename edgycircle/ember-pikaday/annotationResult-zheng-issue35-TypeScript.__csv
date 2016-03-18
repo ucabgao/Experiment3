@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+edgycircle/ember-pikaday,35,ca88739477df2f3a2f8accbc471a15b4ea0cca01,TypeScript,Undetectable,"Null/undefined handling. TypeScript does not support non-nullable type annotations.",27.0
