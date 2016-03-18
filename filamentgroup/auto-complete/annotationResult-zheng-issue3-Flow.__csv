@@ -1,0 +1,2 @@
+Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
+filamentgroup/auto-complete,3,c9571e8256e468494ebb374b98d774c01eb36314,Flow,Undetectable,"EIS. Wrongly implement the functionality of closing the menu after hitting 'enter'.",91.0

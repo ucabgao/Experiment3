@@ -1,3 +1,5 @@
+/* @flow */
+
 (function( w, $ ){
   "use strict";
 
