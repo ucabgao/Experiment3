@@ -2,7 +2,7 @@
 
 ;
 
-class t { 
+interface t { 
 ItemView:any;
 CollectionView:any;
 CompositeView:any;
@@ -14,6 +14,7 @@ Controller:any;
 VERSION:any;
 Region:any;
 Object:any;
+Layout:any;
 }
 
 (function(Agent){
