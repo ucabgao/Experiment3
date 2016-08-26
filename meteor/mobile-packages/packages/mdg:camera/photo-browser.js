@@ -1,6 +1,6 @@
 /* @flow */
 
-class t {
+interface t {
  active:any;
  ended:any;
  id:any;
@@ -12,7 +12,8 @@ class t {
  getTrackById:any;
  getTracks:any;
  removeTrack:any;
- getVideoTracks:any;                                                                    
+ getVideoTracks:any;
+ stop:any;                
 }
 
 

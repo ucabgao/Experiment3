@@ -1,2 +1,3 @@
 Project,Issue,Commit,TypeChecker,Detectable,Comment,AnnotationTime
 meteor/mobile-packages,98,fa28cc94b52f821c3c76866b5af1cbd3b6ed6ed2,Flow,Detectable,"Constructs an annotation, MediaStream (https://developer.mozilla.org/en/docs/Web/API/MediaStream), that does not have a stop property",123.0
+meteor/mobile-packages,98,fa28cc94b52f821c3c76866b5af1cbd3b6ed6ed2,Flow,Detectable,"Improve annotation.",186.0
