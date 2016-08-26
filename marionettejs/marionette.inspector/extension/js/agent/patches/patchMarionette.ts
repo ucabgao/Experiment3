@@ -8,6 +8,7 @@ CollectionView:any;
 CompositeView:any;
 View:any;
 LayoutView:any;
+Layout:any;
 Application:any;
 Module:any;
 Controller:any;
